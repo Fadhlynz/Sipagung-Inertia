@@ -25,6 +25,8 @@ Route::get('/patients-data', [PatientsController::class, 'data'])->name('patient
 
 Route::get('/hama-data', [HamaController::class, 'data'])->name('hama.data');
 
+Route::get('/penyakit-data', [PenyakitController::class, 'data'])->name('penyakit.data');
+
 Route::get('/disease-data', [DiseaseController::class, 'data'])->name('disease.data');
 
 Route::get('/symptom-data', [SymptomController::class, 'data'])->name('symptom.data');

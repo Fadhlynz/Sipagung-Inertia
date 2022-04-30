@@ -9,6 +9,6 @@ class MasterhamaController extends Controller
 {
     public function index()
     {
-      return inertia('Admin/MasterHama');
+      return inertia('Admin/MasterHama'); 
     }
 }

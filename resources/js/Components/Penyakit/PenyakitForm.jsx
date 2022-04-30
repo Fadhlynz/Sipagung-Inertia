@@ -5,11 +5,11 @@ import toast from "react-hot-toast";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { modalData, modalToggle } from "../../Store/Modal";
 
-export default function HamaForm() {
+export default function PenyakitForm() {
     const [showModal, setShowModal] = useRecoilState(modalToggle);
     const editData = useRecoilValue(modalData);
 
-    const [hamaData, setHamaData] = useState({
+    const [penyakitData, setPenyakitData] = useState({
         name: "",
         detail: "",
         solution: "",
@@ -18,50 +18,50 @@ export default function HamaForm() {
 
     const [error, setError] = useState();
 
-    const submitHama = (e) => {
+    const submitPenyakit = (e) => {
         e.preventDefault();
 
         if (editData) {
-            Inertia.post("hama-update", hamaData, {
+            Inertia.post("penyakit-update", penyakitData, {
                 onError: (e) => {
                     e?.duplicate && toast.error(e?.duplicate);
                     setError(e);
                 },
                 onSuccess: () => {
                     setShowModal(false);
-                    setHamaData((hamaData) => ({
-                        ...hamaData,
+                    setPenyakitData((penyakitData) => ({
+                        ...penyakitData,
                         name: "",
                         detail: "",
                         solution: "",
                         image: "",
                     }));
-                    toast.success("Hama berhasil diubah!");
+                    toast.success("Data berhasil diubah!");
                 },
             });
         } else {
-            Inertia.post("hama", hamaData, {
+            Inertia.post("penyakit", penyakitData, {
                 onError: (e) => {
                     setError(e);
                 },
                 onSuccess: () => {
                     setShowModal(false);
-                    setHamaData((hamaData) => ({
-                        ...hamaData,
+                    setPenyakitData((penyakitData) => ({
+                        ...penyakitData,
                         name: "",
                         detail: "",
                         solution: "",
                         image: "",
                     }));
-                    toast.success("Hama berhasil ditambahkan!");
+                    toast.success("Data berhasil ditambahkan!");
                 },
             });
         }
     };
 
     useEffect(() => {
-        setHamaData((hamaData) => ({
-            ...hamaData,
+        setPenyakitData((penyakitData) => ({
+            ...penyakitData,
             id: editData?.id,
             name: editData?.name,
             detail: editData?.detail,
@@ -75,21 +75,21 @@ export default function HamaForm() {
             <ModalRoot
                 title={
                     <h1 className="font-semibold text-gray-800 text-xl">
-                        {`${editData ? "Edit" : "Tambah"} Hama`}
+                        {`${editData ? "Edit" : "Tambah"} Penyakit`}
                     </h1>
                 }
             >
-                <form onSubmit={submitHama} className="flex flex-col space-y-3">
+                <form onSubmit={submitPenyakit} className="flex flex-col space-y-3">
                     <div className="flex flex-col space-y-1">
-                        <h1 className="text-gray-500 text-sm">Nama Hama</h1>
+                        <h1 className="text-gray-500 text-sm">Nama Penyakit</h1>
                         <input
                             onChange={(e) => {
-                                setHamaData((hamaData) => ({
-                                    ...hamaData,
+                                setPenyakitData((penyakitData) => ({
+                                    ...penyakitData,
                                     name: e.target.value,
                                 }));
                             }}
-                            value={hamaData.name}
+                            value={penyakitData.name}
                             type="text"
                             name="name"
                             id="name"
@@ -105,8 +105,8 @@ export default function HamaForm() {
                         <h1 className="text-gray-500 text-sm">Detail</h1>
                         <textarea
                             onChange={(e) => {
-                                setHamaData((hamaData) => ({
-                                    ...hamaData,
+                                setPenyakitData((penyakitData) => ({
+                                    ...penyakitData,
                                     detail: e.target.value,
                                 }));
                             }}
@@ -128,7 +128,7 @@ export default function HamaForm() {
                         <h1 className="text-gray-500 text-sm">Solution</h1>
                         <textarea
                             onChange={(e) => {
-                                setHamaData((hamaData) => ({
+                                setPenyakitData((hamaData) => ({
                                     ...hamaData,
                                     solution: e.target.value,
                                 }));
@@ -151,7 +151,7 @@ export default function HamaForm() {
                         <h1 className="text-gray-500 text-sm">Gambar</h1>
                         <input
                             onChange={(e) => {
-                                setHamaData((hamaData) => ({
+                                setPenyakitData((hamaData) => ({
                                     ...hamaData,
                                     image: e.target.files,
                                 }));

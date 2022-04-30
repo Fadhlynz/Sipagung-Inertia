@@ -76,8 +76,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/gejalahama-update', [GejalahamaController::class, 'update']);
         // Data Basis Hama
         Route::post('/basis-hama', [BasishamaController::class, 'insert']);
-        Route::post('/basispenyakit-delete', [BasishamaController::class, 'delete']);
-        Route::post('/basispenyakit-update', [BasishamaController::class, 'update']);
+        Route::post('/basishama-delete', [BasishamaController::class, 'delete']);
+        Route::post('/basishama-update', [BasishamaController::class, 'update']);
 
         //Master Penyakit
         Route::get('/data-penyakit', [MasterpenyakitController::class, 'index']);
@@ -90,7 +90,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/gejalapenyakit-delete', [GejalapenyakitController::class, 'delete']);
         Route::post('/gejalapenyakit-update', [GejalapenyakitController::class, 'update']);
         // Data Basis Penyakit
-        Route::post('/basis-penyakit', [BasispenyakitController::class, 'insert']);
+        Route::post('/basis-penyakit', [basishamaController::class, 'insert']);
         Route::post('/basispenyakit-delete', [BasispenyakitController::class, 'delete']);
         Route::post('/basispenyakit-update', [BasispenyakitController::class, 'update']);
 

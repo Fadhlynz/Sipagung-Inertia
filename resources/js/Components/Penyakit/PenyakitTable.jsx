@@ -9,7 +9,7 @@ import ZenDialog from "../ZenDialog";
 import { Grid, _ } from "gridjs-react";
 import { baseUrlApi } from "../../Store/Global";
 
-export default function HamaTable(props) {
+export default function PanyakitTable(props) {
     const [showDialog, setShowDialog] = useRecoilState(dialogToggle);
     const [showModal, setShowModal] = useRecoilState(modalToggle);
     const [editData, setEditData] = useRecoilState(modalData);
@@ -25,7 +25,7 @@ export default function HamaTable(props) {
     const sureDelete = (confirm) => {
         if (confirm) {
             Inertia.post(
-                "hama-delete",
+                "penyakit-delete",
                 { id: dialogInfo.id },
                 {
                     onSuccess: () => {
@@ -42,7 +42,7 @@ export default function HamaTable(props) {
         }
     };
 
-    const deleteHama = (id, name) => {
+    const deletePenyakit = (id, name) => {
         setDialogInfo({
             title: "Yakin Menghapus?",
             message: "Data yang dihapus tidak dapat dikembalikan. Lanjutkan?",
@@ -62,27 +62,27 @@ export default function HamaTable(props) {
             />
             <Grid
                 server={{
-                    url: url + "hama-data",
+                    url: url + "penyakit-data",
                     then: (data) =>
-                        data.map((hama, index) => [
+                        data.map((penyakit, index) => [
                             index + 1,
-                            hama.name,
-                            hama.detail,
-                            hama.solution,
+                            penyakit.name,
+                            penyakit.detail,
+                            penyakit.solution,
                             _(
                                 <img
                                     className="h-24"
-                                    src={hama.image.replace(
+                                    src={penyakit.image.replace(
                                         "public",
                                         "storage"
                                     )}
-                                    alt="Gambar Hama"
+                                    alt="Gambar Penyakit"
                                 />
                             ),
                             _(
                                 <button
                                     onClick={() => {
-                                        setEditData(hama);
+                                        setEditData(penyakit);
                                         setShowModal(true);
                                     }}
                                     className="p-2 rounded-lg bg-yellow-100 hover:bg-yellow-200 transition duration-200"
@@ -96,7 +96,7 @@ export default function HamaTable(props) {
                             _(
                                 <button
                                     onClick={() => {
-                                        deleteHama(hama.id, hama.name);
+                                        deletePenyakit(penyakit.id, penyakit.name);
                                     }}
                                     className="p-2 rounded-lg bg-red-100 hover:bg-red-200 transition duration-200"
                                 >
@@ -110,7 +110,7 @@ export default function HamaTable(props) {
                 }}
                 columns={[
                     "No",
-                    "Jenis Hama",
+                    "Jenis Penyakit",
                     "Detail",
                     "Solusi",
                     "Gambar",

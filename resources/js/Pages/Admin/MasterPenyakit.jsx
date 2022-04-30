@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Admin from "../../Layouts/Admin";
-import Penyakit from "./Penyakit";
+import Penyakit from "./Penyakit"
 import Symptom from "./Symptom";
 import Rules from "./Rules";
 
@@ -25,12 +25,12 @@ export default function MasterPenyakit() {
                     </div>
                     <div
                         className={`px-4 py-2 cursor-pointer rounded-xl ${
-                            tab == "gejala"
+                            tab == "gejalapenyakit"
                                 ? "bg-blue-500 text-white"
                                 : "bg-gray-100 text-blue-500 border-blue-500"
                         } font-semibold`}
                         onClick={() => {
-                            setTab("gejala");
+                            setTab("gejalapenyakit");
                         }}
                     >
                         Gejala Penyakit
@@ -48,7 +48,7 @@ export default function MasterPenyakit() {
                         Basis Penyakit
                     </div>
                 </div>
-                {tab == "hama" && <Hama />}
+                {tab == "penyakit" && <Penyakit />}
                 {tab == "gejala" && <Symptom />}
                 {tab == "aturan" && <Rules />}
             </div>
