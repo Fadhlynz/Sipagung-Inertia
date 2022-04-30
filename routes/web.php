@@ -71,11 +71,11 @@ Route::middleware('auth')->group(function () {
         Route::post('/hama-delete', [HamaController::class, 'delete']);
         Route::post('/hama-update', [HamaController::class, 'update']);
         // Data Gejala Hama
-        Route::post('/gejalahama', [GejalahamaController::class, 'insert']);
+        Route::post('/gejalahama', [GejalahamaController::class, 'store']);
         Route::post('/gejalahama-delete', [GejalahamaController::class, 'delete']);
         Route::post('/gejalahama-update', [GejalahamaController::class, 'update']);
         // Data Basis Hama
-        Route::post('/basis-hama', [BasishamaController::class, 'insert']);
+        Route::post('/basishama', [BasishamaController::class, 'store']);
         Route::post('/basishama-delete', [BasishamaController::class, 'delete']);
         Route::post('/basishama-update', [BasishamaController::class, 'update']);
 
@@ -90,7 +90,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/gejalapenyakit-delete', [GejalapenyakitController::class, 'delete']);
         Route::post('/gejalapenyakit-update', [GejalapenyakitController::class, 'update']);
         // Data Basis Penyakit
-        Route::post('/basis-penyakit', [basishamaController::class, 'insert']);
+        Route::post('/basispenyakit', [BasishamaController::class, 'insert']);
         Route::post('/basispenyakit-delete', [BasispenyakitController::class, 'delete']);
         Route::post('/basispenyakit-update', [BasispenyakitController::class, 'update']);
 

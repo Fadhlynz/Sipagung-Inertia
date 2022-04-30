@@ -49,8 +49,8 @@ export default function MasterPenyakit() {
                     </div>
                 </div>
                 {tab == "penyakit" && <Penyakit />}
-                {tab == "gejala" && <Symptom />}
-                {tab == "aturan" && <Rules />}
+                {tab == "gejalapenyakit" && <GejalaPenyakit />}
+                {tab == "basispenyakit" && <BasisPenyakit />}
             </div>
         </Admin>
     );

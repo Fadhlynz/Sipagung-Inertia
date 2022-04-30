@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Admin from "../../Layouts/Admin";
 import Hama from "./Hama";
-import Symptom from "./Symptom";
-import Rules from "./Rules";
+import GejalaHama from "./GejalaHama";
+import BasisHama from "./BasisHama";
 
 export default function MasterHama() {
     const [tab, setTab] = useState("hama");
@@ -25,32 +25,32 @@ export default function MasterHama() {
                     </div>
                     <div
                         className={`px-4 py-2 cursor-pointer rounded-xl ${
-                            tab == "gejala"
+                            tab == "gejalahama"
                                 ? "bg-blue-500 text-white"
                                 : "bg-gray-100 text-blue-500 border-blue-500"
                         } font-semibold`}
                         onClick={() => {
-                            setTab("gejala");
+                            setTab("gejalahama");
                         }}
                     >
                         Gejala Hama
                     </div>
                     <div
                         className={`px-4 py-2 cursor-pointer rounded-xl ${
-                            tab == "aturan"
+                            tab == "basishama"
                                 ? "bg-blue-500 text-white"
                                 : "bg-gray-100 text-blue-500 border-blue-500"
                         } font-semibold`}
                         onClick={() => {
-                            setTab("aturan");
+                            setTab("basishama");
                         }}
                     >
                         Basis Hama
                     </div>
                 </div>
                 {tab == "hama" && <Hama />}
-                {tab == "gejala" && <Symptom />}
-                {tab == "aturan" && <Rules />}
+                {tab == "gejalahama" && <GejalaHama />}
+                {tab == "basishama" && <BasisHama />}
             </div>
         </Admin>
     );

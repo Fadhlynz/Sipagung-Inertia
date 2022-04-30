@@ -110,13 +110,13 @@ export default function PenyakitForm() {
                                     detail: e.target.value,
                                 }));
                             }}
-                            value={hamaData.detail}
+                            value={penyakitData.detail}
                             type="text"
                             name="str"
                             id="str"
                             className="border-2 border-gray-200 focus:border-white focus:outline-none focus:ring focus:ring-gray-400 transition duration-200 rounded-lg"
                         >
-                            {hamaData.detail}
+                            {penyakitData.detail}
                         </textarea>
                         {error?.detail && (
                             <span className="text-xs text-red-500">
@@ -128,18 +128,18 @@ export default function PenyakitForm() {
                         <h1 className="text-gray-500 text-sm">Solution</h1>
                         <textarea
                             onChange={(e) => {
-                                setPenyakitData((hamaData) => ({
-                                    ...hamaData,
+                                setPenyakitData((penyakitData) => ({
+                                    ...penyakitData,
                                     solution: e.target.value,
                                 }));
                             }}
-                            value={hamaData.solution}
+                            value={penyakitData.solution}
                             type="text"
                             name="str"
                             id="str"
                             className="border-2 border-gray-200 focus:border-white focus:outline-none focus:ring focus:ring-gray-400 transition duration-200 rounded-lg"
                         >
-                            {hamaData.solution}
+                            {penyakitData.solution}
                         </textarea>
                         {error?.solution && (
                             <span className="text-xs text-red-500">
@@ -151,8 +151,8 @@ export default function PenyakitForm() {
                         <h1 className="text-gray-500 text-sm">Gambar</h1>
                         <input
                             onChange={(e) => {
-                                setPenyakitData((hamaData) => ({
-                                    ...hamaData,
+                                setPenyakitData((penyakitData) => ({
+                                    ...penyakitData,
                                     image: e.target.files,
                                 }));
                             }}

@@ -8,17 +8,17 @@ use Illuminate\Http\Request;
 
 class GejalahamaController extends Controller
 {
-     public function store(Request $request)
-     {
-     $request->validate([
-     'name' => 'required',
-     ],[
-     'name.required' => 'Nama gejala harus diisi!',
-     ]);
+    public function store(Request $request)
+    {
+    $request->validate([
+    'name' => 'required',
+    ],[
+    'name.required' => 'Nama gejala harus diisi!',
+    ]);
 
-     Gejalahama::create([
-     'name' => $request->name
-     ]);
+    Gejalahama::create([
+    'name' => $request->name
+    ]);
 
      return back();
      }

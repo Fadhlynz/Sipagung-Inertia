@@ -8,5 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Basishama extends Model
 {
     use HasFactory;
-        protected $guarded=[];
+    protected $guarded=[];
+
+    public function gejalahama()
+    {
+    return $this->belongsTo(Gejalahama::class);
+    }
+    public function hama()
+    {
+    return $this->belongsTo(Hama::class);
+    }
 }

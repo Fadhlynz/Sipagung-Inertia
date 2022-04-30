@@ -9,7 +9,7 @@ import ZenDialog from "../ZenDialog";
 import { Grid, _ } from "gridjs-react";
 import { baseUrlApi } from "../../Store/Global";
 
-export default function SymptomTable(props) {
+export default function GejalaHamaTable(props) {
     const [showDialog, setShowDialog] = useRecoilState(dialogToggle);
     const [showModal, setShowModal] = useRecoilState(modalToggle);
     const [editData, setEditData] = useRecoilState(modalData);
@@ -25,7 +25,7 @@ export default function SymptomTable(props) {
     const sureDelete = (confirm) => {
         if (confirm) {
             Inertia.post(
-                "symptom-delete",
+                "gejalahama-delete",
                 { id: dialogInfo.id },
                 {
                     onSuccess: () => {
@@ -42,7 +42,7 @@ export default function SymptomTable(props) {
         }
     };
 
-    const deleteSymptom = (id, name) => {
+    const deleteGejalaHama = (id, name) => {
         setDialogInfo({
             title: "Yakin Menghapus?",
             message: "Data yang dihapus tidak dapat dikembalikan. Lanjutkan?",
@@ -62,16 +62,15 @@ export default function SymptomTable(props) {
             />
             <Grid
                 server={{
-                    url: url + "symptom-data",
+                    url: url + "gejalahama-data",
                     then: (data) =>
-                        data.map((symptom, index) => [
+                        data.map((gejalahama, index) => [
                             index + 1,
-                            symptom.code,
-                            symptom.name,
+                            gejalahama.name,
                             _(
                                 <button
                                     onClick={() => {
-                                        setEditData(symptom);
+                                        setEditData(gejalahama);
                                         setShowModal(true);
                                     }}
                                     className="p-2 rounded-lg bg-yellow-100 hover:bg-yellow-200 transition duration-200"
@@ -85,7 +84,7 @@ export default function SymptomTable(props) {
                             _(
                                 <button
                                     onClick={() => {
-                                        deleteSymptom(symptom.id, symptom.name);
+                                        deleteGejalaHama(gejalahama.id, gejalahama.name);
                                     }}
                                     className="p-2 rounded-lg bg-red-100 hover:bg-red-200 transition duration-200"
                                 >
@@ -97,7 +96,7 @@ export default function SymptomTable(props) {
                             ),
                         ]),
                 }}
-                columns={["No", "Code", "Gejala", "Edit", "Hapus"]}
+                columns={["No", "Gejala", "Edit", "Hapus"]}
                 search={true}
                 pagination={{
                     enabled: true,
