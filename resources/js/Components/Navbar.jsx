@@ -5,7 +5,7 @@ export default function Navbar(props) {
     return (
         <div className="bg-white w-full h-fit flex flex-col sm:flex-row justify-between items-center py-5 px-20 fixed top-0 z-20">
             <Link href="/">
-                <h1 className="text-2xl text-blue-500 font-bold">SIPAKAR</h1>
+                <h1 className="text-2xl text-blue-500 font-bold">SIPAGUNG</h1>
             </Link>
             <div className="space-x-10 py-2">
                 <Link href="/">

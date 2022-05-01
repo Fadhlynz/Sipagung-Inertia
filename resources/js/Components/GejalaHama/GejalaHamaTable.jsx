@@ -65,7 +65,7 @@ export default function GejalaHamaTable(props) {
                     url: url + "gejalahama-data",
                     then: (data) =>
                         data.map((gejalahama, index) => [
-                            index + 1,
+                            "G" + index + 1,
                             gejalahama.name,
                             _(
                                 <button
@@ -84,7 +84,10 @@ export default function GejalaHamaTable(props) {
                             _(
                                 <button
                                     onClick={() => {
-                                        deleteGejalaHama(gejalahama.id, gejalahama.name);
+                                        deleteGejalaHama(
+                                            gejalahama.id,
+                                            gejalahama.name
+                                        );
                                     }}
                                     className="p-2 rounded-lg bg-red-100 hover:bg-red-200 transition duration-200"
                                 >
@@ -96,7 +99,7 @@ export default function GejalaHamaTable(props) {
                             ),
                         ]),
                 }}
-                columns={["No", "Gejala", "Edit", "Hapus"]}
+                columns={["Kode Gejala", "Gejala", "Edit", "Hapus"]}
                 search={true}
                 pagination={{
                     enabled: true,

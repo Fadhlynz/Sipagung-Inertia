@@ -14,8 +14,8 @@ export default function MasterHama() {
                     <div
                         className={`px-4 py-2 cursor-pointer rounded-xl ${
                             tab == "hama"
-                                ? "bg-blue-500 text-white"
-                                : "bg-gray-100 text-blue-500 border-blue-500"
+                                ? "bg-green-500 text-white"
+                                : "bg-gray-100 text-green-500 border-green-500"
                         } font-semibold`}
                         onClick={() => {
                             setTab("hama");
@@ -26,8 +26,8 @@ export default function MasterHama() {
                     <div
                         className={`px-4 py-2 cursor-pointer rounded-xl ${
                             tab == "gejalahama"
-                                ? "bg-blue-500 text-white"
-                                : "bg-gray-100 text-blue-500 border-blue-500"
+                                ? "bg-green-500 text-white"
+                                : "bg-gray-100 text-green-500 border-green-500"
                         } font-semibold`}
                         onClick={() => {
                             setTab("gejalahama");
@@ -38,8 +38,8 @@ export default function MasterHama() {
                     <div
                         className={`px-4 py-2 cursor-pointer rounded-xl ${
                             tab == "basishama"
-                                ? "bg-blue-500 text-white"
-                                : "bg-gray-100 text-blue-500 border-blue-500"
+                                ? "bg-green-500 text-white"
+                                : "bg-gray-100 text-green-500 border-green-500"
                         } font-semibold`}
                         onClick={() => {
                             setTab("basishama");

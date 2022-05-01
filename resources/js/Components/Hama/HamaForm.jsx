@@ -172,7 +172,7 @@ export default function HamaForm() {
                     </div>
                     <button
                         type="submit"
-                        className="bg-blue-500 text-white font-bold text-center py-2 rounded-lg mt-2"
+                        className="bg-green-500 text-white font-bold text-center py-2 rounded-lg mt-2"
                     >
                         Simpan
                     </button>

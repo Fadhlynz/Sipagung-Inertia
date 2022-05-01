@@ -55,7 +55,10 @@ Route::post('/register', [LoginController::class, 'insert']);
 
 // User Page
 Route::get('/beranda', [BerandaController::class, 'index']);
+// Diagmosa Hama
 Route::get('/diagnosa-hama', [DiagnosaHamaController::class, 'index']);
+Route::post('/hasildiagnosa', [DiagnosaHamaController::class, 'store']);
+
 Route::get('/diagnosa-penyakit', [DiagnosaPenyakitController::class, 'index']);
 Route::get('/riwayat', [RiwayatController::class, 'index']);
 Route::get('/keterangan', [KeteranganController::class, 'index']);

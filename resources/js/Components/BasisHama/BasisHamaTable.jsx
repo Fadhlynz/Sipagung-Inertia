@@ -101,7 +101,7 @@ export default function BasisHamaTable(props) {
                             ),
                         ]),
                 }}
-                columns={["No", "Gejala", "Penyakit", "Bobot", "Aksi", ""]}
+                columns={["No", "Gejala", "Penyakit", "Nilai CF", "Aksi", ""]}
                 search={true}
                 pagination={{
                     enabled: true,

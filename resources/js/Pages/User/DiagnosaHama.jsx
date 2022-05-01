@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { Inertia } from "@inertiajs/inertia";
+import { Grid, _ } from "gridjs-react";
+import { useRecoilValue } from "recoil";
 import User from "../../Layouts/User";
-import DiagnosaTable from "../../Components/User/DiagnosaHama/DiagnosaTable";
-import FloatButton from "../../Components/User/FloatActionButton";
+import { baseUrlApi } from "../../Store/Global";
 import * as BsIcons from "react-icons/bs";
+import * as FaIcons from "react-icons/fa";
 
 export default function DiagnosaHama() {
+    const url = useRecoilValue(baseUrlApi);
+
+    const [kondisiHamaData, setKondisiHamaData] = useState({
+        kondisihama: "",
+    });
+
+    const submitDiagnosaHama = (e) => {
+        e.preventDefault();
+
+        Inertia.post("hasildiagnosa", kondisiHamaData, {
+            onSuccess: () => {
+                setKondisiHamaData((kondisiHamaData) => ({
+                    ...kondisiHamaData,
+                    kondisihama: "",
+                }));
+            },
+        });
+    };
+
     return (
         <User judul="Diagnosa Hama">
             <div className="p-4">
@@ -24,12 +46,75 @@ export default function DiagnosaHama() {
                     </path>
                 </div>
             </div>
-            <div className="p-4 space-y-3">
-                <DiagnosaTable />
-            </div>
-            <div className="p-4 relative">
-                <FloatButton />
-            </div>
+            <form
+                onSubmit={submitDiagnosaHama}
+                className="flex flex-col space-y-3"
+            >
+                <div className="p-4 space-y-3">
+                    <div className="flex flex-col">
+                        <Grid
+                            server={{
+                                url: url + "gejalahama-data",
+                                then: (data) =>
+                                    data.map((gejalahama, index) => [
+                                        index + 1,
+                                        "G" + index + 1,
+                                        gejalahama.name,
+                                        _(
+                                            <select
+                                                name="kondisihama"
+                                                id="kondisihama"
+                                                className="border-2 border-gray-200 focus:border-white focus:outline-none focus:ring focus:ring-gray-400 transition duration-200 rounded-lg"
+                                            >
+                                                <option value={0}>
+                                                    -Pillih Jika Sesuai-
+                                                </option>
+                                                <option value={2}>
+                                                    Mungkin Ya
+                                                </option>
+                                                <option value={3}>
+                                                    Mungkin Tidak
+                                                </option>
+                                            </select>
+                                        ),
+                                    ]),
+                            }}
+                            columns={[
+                                "No",
+                                "Kode Gejala",
+                                "Gejala",
+                                "Pilih Kondisi",
+                            ]}
+                            className={{
+                                container:
+                                    "bg-white shadow-md rounded-lg overflow-hidden p-5 overflow-x-auto",
+                                table: "mt-5 border-2 border-gray-200",
+                                thead: "bg-gray-200",
+                                th: "text-left text-sm font-medium text-gray-700 px-4 py-3",
+                                tbody: "text-sm",
+                                tr: "hover:bg-gray-100 border-b-2 border-gray-200",
+                                td: "px-4 py-3",
+                                footer: "text-gray-500 text-sm",
+                            }}
+                        />
+                    </div>
+                </div>
+                <div className="p-4 relative">
+                    <div class="fixed bottom-10 right-7">
+                        <button
+                            type="submit"
+                            class="p-0 w-16 h-16 bg-green-600 rounded-full hover:bg-green-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none"
+                        >
+                            <div class="w-4 h-4 inline-block">
+                                <FaIcons.FaSearchPlus
+                                    size={16}
+                                    className="text-white"
+                                />
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </form>
         </User>
     );
 }
