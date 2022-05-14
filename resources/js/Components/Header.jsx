@@ -24,10 +24,10 @@ export default function Header(props) {
                             className="text-hijau-telpon"
                         />
                     </div>
-                    <div className="p-2 rounded-full bg-blue-100/80">
+                    <div className="p-2 rounded-full bg-green-100/80">
                         <RiIcons.RiChat3Fill
                             size={18}
-                            className="text-blue-600"
+                            className="text-green-600"
                         />
                     </div>
                     <div className="p-2 rounded-full bg-amber-100/80">

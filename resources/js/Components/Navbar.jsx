@@ -5,16 +5,16 @@ export default function Navbar(props) {
     return (
         <div className="bg-white w-full h-fit flex flex-col sm:flex-row justify-between items-center py-5 px-20 fixed top-0 z-20">
             <Link href="/">
-                <h1 className="text-2xl text-blue-500 font-bold">SIPAGUNG</h1>
+                <h1 className="text-2xl text-green-500 font-bold">SIPAGUNG</h1>
             </Link>
             <div className="space-x-10 py-2">
                 <Link href="/">
                     <button
                         className={`${
                             props.title == "Home"
-                                ? "text-blue-400"
+                                ? "text-green-400"
                                 : "text-gray-800"
-                        } hover:text-blue-400 transition-all duration-300`}
+                        } hover:text-green-400 transition-all duration-300`}
                     >
                         Home
                     </button>
@@ -23,9 +23,9 @@ export default function Navbar(props) {
                     <button
                         className={`${
                             props.title == "Diagnosa"
-                                ? "text-blue-400"
+                                ? "text-green-400"
                                 : "text-gray-800"
-                        } hover:text-blue-400 transition-all duration-300`}
+                        } hover:text-green-400 transition-all duration-300`}
                     >
                         Diagnosa
                     </button>
@@ -34,9 +34,9 @@ export default function Navbar(props) {
                     <button
                         className={`${
                             props.title == "About"
-                                ? "text-blue-400"
+                                ? "text-green-400"
                                 : "text-gray-800"
-                        } hover:text-blue-400 transition-all duration-300`}
+                        } hover:text-green-400 transition-all duration-300`}
                     >
                         About
                     </button>
@@ -45,9 +45,9 @@ export default function Navbar(props) {
                     <button
                         className={`${
                             props.title == "Login"
-                                ? "text-blue-500"
+                                ? "text-green-500"
                                 : "text-white"
-                        } hover:text-blue-500 hover:bg-white border border-blue-500 transition-all duration-300 bg-blue-500 px-5 py-2 rounded-lg`}
+                        } hover:text-green-500 hover:bg-white border border-green-500 transition-all duration-300 bg-green-500 px-5 py-2 rounded-lg`}
                     >
                         Login
                     </button>

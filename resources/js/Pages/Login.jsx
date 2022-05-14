@@ -41,19 +41,19 @@ export default function Login() {
                     </a>
                 </Link>
 
-                <div className="absolute w-screen -translate-y-10 skew-y-6 transform sm:h-48 h-32 bg-blue-600 z-10"></div>
-                <div className="absolute w-screen -translate-y-10 -skew-y-6 transform sm:h-16 h-28 bg-blue-300 z-0"></div>
+                <div className="absolute w-screen -translate-y-10 skew-y-6 transform sm:h-48 h-32 bg-green-600 z-10"></div>
+                <div className="absolute w-screen -translate-y-10 -skew-y-6 transform sm:h-16 h-28 bg-green-300 z-0"></div>
                 <form
                     onSubmit={login}
                     className="z-40 px-10 py-5 pt-32 space-y-6"
                 >
                     <div className="flex items-center">
-                        <h1 className="text-2xl font-bold text-blue-600">
+                        <h1 className="text-2xl font-bold text-green-700">
                             Selamat Datang!
                         </h1>
                     </div>
                     <div className="flex flex-col space-y-3">
-                        <div className="py-1 border-b border-blue-600">
+                        <div className="py-1 border-b border-green-600">
                             <input
                                 type="text"
                                 className="bg-white border-0 focus:outline-none focus:ring-white px-0 w-full"
@@ -69,7 +69,7 @@ export default function Login() {
                                 {error?.username}
                             </span>
                         )}
-                        <div className="py-1 border-b border-blue-600">
+                        <div className="py-1 border-b border-green-600">
                             <input
                                 type="password"
                                 className="bg-white border-0 focus:outline-none focus:ring-white px-0 w-full"
@@ -88,19 +88,19 @@ export default function Login() {
                         <div className="pt-5 w-full flex">
                             <button
                                 type="submit"
-                                className="bg-blue-600 rounded-full text-white font-bold w-full py-2"
+                                className="bg-green-600 rounded-full text-white font-bold w-full py-2"
                             >
                                 Masuk
                             </button>
                         </div>
                         <div className="flex justify-between flex-row-reverse py-3">
-                            <h1 className="text-blue-500 hover:underline cursor-pointer">
+                            <h1 className="text-green-700 hover:underline cursor-pointer">
                                 Lupa Password?
                             </h1>
                             <Link href="/register">
                                 <a
                                     href=""
-                                    className="text-blue-500 hover:underline cursor-pointer"
+                                    className="text-green-700 hover:underline cursor-pointer"
                                 >
                                     Daftar Akun
                                 </a>
