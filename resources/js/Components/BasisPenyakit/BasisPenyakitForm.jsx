@@ -7,54 +7,53 @@ import { modalData, modalToggle } from "../../Store/Modal";
 import { baseUrlApi } from "../../Store/Global";
 import axios from "axios";
 
-export default function BasisHamaForm() {
+export default function BasisPenyakitForm() {
     const [showModal, setShowModal] = useRecoilState(modalToggle);
     const editData = useRecoilValue(modalData);
-    const [gejalahamas, setGejalaHamas] = useState([]);
-    const [hamas, setHamas] = useState([]);
+    const [gejalapenyakits, setGejalaPenyakits] = useState([]);
+    const [penyakits, setPenyakits] = useState([]);
 
     const urlApi = useRecoilValue(baseUrlApi);
 
-
-    const [basishamaData, setBasisHamaData] = useState({
-        gejalahama_id: "",
-        hama_id: "",
+    const [basispenyakitData, setBasisPenyakitData] = useState({
+        gejalapenyakit_id: "",
+        penyakit_id: "",
         value: "",
     });
 
     const [error, setError] = useState();
 
-    const submitBasisHama = (e) => {
+    const submitBasisPenyakit = (e) => {
         e.preventDefault();
 
         if (editData) {
-            Inertia.post("basishama-update", basishamaData, {
+            Inertia.post("basispenyakit-update", basispenyakitData, {
                 onError: (e) => {
                     e?.duplicate && toast.error(e?.duplicate);
                     setError(e);
                 },
                 onSuccess: () => {
                     setShowModal(false);
-                    setBasisHamaData((basishamaData) => ({
-                        ...basishamaData,
-                        gejalahama_id: "",
-                        hama_id: "",
+                    setBasisPenyakitData((basispenyakitData) => ({
+                        ...basispenyakitData,
+                        gejalapenyakit_id: "",
+                        penyakit_id: "",
                         value: "",
                     }));
                     toast.success("Data berhasil diubah!");
                 },
             });
         } else {
-            Inertia.post("basishama", basishamaData, {
+            Inertia.post("basispenyakit", basispenyakitData, {
                 onError: (e) => {
                     setError(e);
                 },
                 onSuccess: () => {
                     setShowModal(false);
-                    setBasisHamasData((basishamaData) => ({
-                        ...basishamaData,
-                        gejalahama_id: "",
-                        hama_id: "",
+                    setBasisPenyakitsData((basispenyakitData) => ({
+                        ...basispenyakitData,
+                        gejalapenyakit_id: "",
+                        penyakit_id: "",
                         value: "",
                     }));
                     toast.success("Data berhasil ditambahkan!");
@@ -64,34 +63,34 @@ export default function BasisHamaForm() {
     };
 
     useEffect(() => {
-        setBasisHamaData((basishamaData) => ({
-            ...basishamaData,
+        setBasisPenyakitData((basispenyakitData) => ({
+            ...basispenyakitData,
             id: editData?.id,
-            gejalahama_id: editData?.gejalahama_id,
-            hama_id: editData?.hama_id,
+            gejalapenyakit_id: editData?.gejalapenyakit_id,
+            penyakit_id: editData?.penyakit_id,
             value: editData?.value,
         }));
 
-        const getGejalaHamas = async () => {
-            await axios.get(urlApi + "gejalahama-data").then((res) => {
-                setGejalaHamas(res.data);
-                setBasisHamaData((basishamaData) => ({
-                    ...basishamaData,
-                    gejalahama_id: res.data[0]?.id,
+        const getGejalaPenyakits = async () => {
+            await axios.get(urlApi + "gejalapenyakit-data").then((res) => {
+                setGejalaPenyakits(res.data);
+                setBasisPenyakitData((basispenyakitData) => ({
+                    ...basispenyakitData,
+                    gejalapenyakit_id: res.data[0]?.id,
                 }));
             });
         };
-        const getHamas = async () => {
-            await axios.get(urlApi + "hama-data").then((res) => {
-                setHamas(res.data);
-                setBasisHamaData((basishamaData) => ({
-                    ...basishamaData,
-                    hama_id: res.data[0]?.id,
+        const getPenyakits = async () => {
+            await axios.get(urlApi + "penyakit-data").then((res) => {
+                setPenyakits(res.data);
+                setBasisPenyakitData((basispenyakitData) => ({
+                    ...basispenyakitData,
+                    penyakit_id: res.data[0]?.id,
                 }));
             });
         };
-        getGejalaHamas();
-        getHamas();
+        getGejalaPenyakits();
+        getPenyakits();
     }, [editData]);
 
     return (
@@ -104,27 +103,26 @@ export default function BasisHamaForm() {
                 }
             >
                 <form
-                    onSubmit={submitBasisHama}
+                    onSubmit={submitBasisPenyakit}
                     className="flex flex-col space-y-3"
                 >
                     <div className="flex flex-col space-y-1">
-                        
                         <h1 className="text-gray-500 text-sm">Gejala</h1>
                         <select
                             onChange={(e) => {
-                                setBasisHamaData((basishamaData) => ({
-                                    ...basishamaData,
-                                    gejalahama_id: e.target.value,
+                                setBasisPenyakitData((basispenyakitData) => ({
+                                    ...basispenyakitData,
+                                    gejalapenyakit_id: e.target.value,
                                 }));
                             }}
-                            value={basishamaData.gejalahama_id}
+                            value={basispenyakitData.gejalapenyakit_id}
                             type="text"
-                            name="gejalahama_id"
-                            id="gejalahama_id"
+                            name="gejalapenyakit_id"
+                            id="gejalapenyakit_id"
                             className="border-2 border-gray-200 focus:border-white focus:outline-none focus:ring focus:ring-gray-400 transition duration-200 rounded-lg"
                         >
                             <option value="">Pilih Gejala</option>
-                            {gejalahamas.map((gej, key) => {
+                            {gejalapenyakits.map((gej, key) => {
                                 return (
                                     <option key={key} value={gej.id}>
                                         {gej.name}
@@ -132,9 +130,9 @@ export default function BasisHamaForm() {
                                 );
                             })}
                         </select>
-                        {error?.gejalahama_id && (
+                        {error?.gejalapenyakit_id && (
                             <span className="text-xs text-red-500">
-                                {error?.gejalahama_id}
+                                {error?.gejalapenyakit_id}
                             </span>
                         )}
                     </div>
@@ -142,29 +140,29 @@ export default function BasisHamaForm() {
                         <h1 className="text-gray-500 text-sm">Penyakit</h1>
                         <select
                             onChange={(e) => {
-                                setBasisHamaData((basishamaData) => ({
-                                    ...basishamaData,
-                                    hama_id: e.target.value,
+                                setBasisPenyakitData((basispenyakitData) => ({
+                                    ...basispenyakitData,
+                                    penyakit_id: e.target.value,
                                 }));
                             }}
-                            value={basishamaData.hama_id}
+                            value={basispenyakitData.penyakit_id}
                             type="text"
-                            name="hama_id"
-                            id="hama_id"
+                            name="penyakit_id"
+                            id="penyakit_id"
                             className="border-2 border-gray-200 focus:border-white focus:outline-none focus:ring focus:ring-gray-400 transition duration-200 rounded-lg"
                         >
                             <option value="">Pilih Penyakit</option>
-                            {hamas.map((ham, key) => {
+                            {penyakits.map((pen, key) => {
                                 return (
-                                    <option key={key} value={ham.id}>
-                                        {ham.name}
+                                    <option key={key} value={pen.id}>
+                                        {pen.name}
                                     </option>
                                 );
                             })}
                         </select>
-                        {error?.hama_id && (
+                        {error?.penyakit_id && (
                             <span className="text-xs text-red-500">
-                                {error?.hama_id}
+                                {error?.penyakit_id}
                             </span>
                         )}
                     </div>
@@ -172,12 +170,12 @@ export default function BasisHamaForm() {
                         <h1 className="text-gray-500 text-sm">Bobot</h1>
                         <input
                             onChange={(e) => {
-                                setBasisHamaData((basishamaData) => ({
-                                    ...basishamaData,
+                                setBasisPenyakitData((basispenyakitData) => ({
+                                    ...basispenyakitData,
                                     value: e.target.value,
                                 }));
                             }}
-                            value={basishamaData.value}
+                            value={basispenyakitData.value}
                             type="number"
                             min="0"
                             name="value"

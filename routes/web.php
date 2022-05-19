@@ -89,27 +89,13 @@ Route::middleware('auth')->group(function () {
         Route::post('/penyakit-delete', [PenyakitController::class, 'delete']);
         Route::post('/penyakit-update', [PenyakitController::class, 'update']);
         // Data Gejala Penyakit
-        Route::post('/gejalapenyakit', [GejalapenyakitController::class, 'insert']);
+        Route::post('/gejalapenyakit', [GejalapenyakitController::class, 'store']);
         Route::post('/gejalapenyakit-delete', [GejalapenyakitController::class, 'delete']);
         Route::post('/gejalapenyakit-update', [GejalapenyakitController::class, 'update']);
         // Data Basis Penyakit
-        Route::post('/basispenyakit', [BasishamaController::class, 'insert']);
+        Route::post('/basispenyakit', [BasishamaController::class, 'store']);
         Route::post('/basispenyakit-delete', [BasispenyakitController::class, 'delete']);
         Route::post('/basispenyakit-update', [BasispenyakitController::class, 'update']);
-
-        Route::get('/doctors', [DoctorsController::class, 'index']);
-        Route::post('/doctors', [DoctorsController::class, 'insert']);
-        Route::post('/doctor-delete', [DoctorsController::class, 'delete']);
-        Route::post('/doctor-update', [DoctorsController::class, 'update']);
-
-        Route::get('/patients', [PatientsController::class, 'index']);
-        Route::post('/patients', [PatientsController::class, 'insert']);
-        Route::post('/patient-delete', [PatientsController::class, 'delete']);
-        Route::post('/patient-update', [PatientsController::class, 'update']);
-
-        Route::post('/disease', [DiseaseController::class, 'store']);
-        Route::post('/disease-update', [DiseaseController::class, 'update']);
-        Route::post('/disease-delete', [DiseaseController::class, 'delete']);
         
         Route::post('/symptom', [SymptomController::class, 'store']);
         Route::post('/symptom-update', [SymptomController::class, 'update']);
@@ -119,7 +105,6 @@ Route::middleware('auth')->group(function () {
         Route::post('/rules-update', [RuleController::class, 'update']);
         Route::post('/rules-delete', [RuleController::class, 'delete']);
 
-        Route::get('/data', [DataController::class, 'index']);
         Route::get('/settings', [SettingsController::class, 'index']);
         Route::get('/profile', [ProfileController::class, 'index']);  
     });

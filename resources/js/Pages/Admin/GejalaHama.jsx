@@ -17,8 +17,8 @@ export default function GejalaHama() {
                     setDataEdit(null);
                     setShowModal(true);
                 }}
-                className="text-blue-500 border-2 border-blue-600 px-3 py-1 rounded-xl 
-                focus:ring focus:outline-none focus:ring-blue-200 hover:bg-blue-500
+                className="text-green-500 border-2 border-green-600 px-3 py-1 rounded-xl 
+                focus:ring focus:outline-none focus:ring-green-200 hover:bg-green-500
                 hover:text-white transition-all duration-200 flex items-center space-x-2"
             >
                 <MdIcons.MdAddCircle size={16} />

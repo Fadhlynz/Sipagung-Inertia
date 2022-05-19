@@ -55,42 +55,6 @@ export default function Sidebar(props) {
                         </h1>
                     </div>
                 </Link>
-                <Link className="w-auto sm:w-full" href="doctors">
-                    <div
-                        className={`flex ${
-                            props.active == "Dokter"
-                                ? "bg-green-600 border-green-900  text-white font-bold"
-                                : "bg-white text-gray-500 border-white hover:bg-gray-100 hover:border-gray-300"
-                        }  space-x-3 p-3 rounded-md border-l-8 transition-all duration-300 w-full`}
-                    >
-                        <FaIcons.FaUserMd size={24} className="" />
-                        <h1 className="hidden sm:hidden md:block">Dokter</h1>
-                    </div>
-                </Link>
-                <Link className="w-auto sm:w-full" href="patients">
-                    <div
-                        className={`flex ${
-                            props.active == "Pasien"
-                                ? "bg-green-600 border-green-900  text-white font-bold"
-                                : "bg-white text-gray-500 border-white hover:bg-gray-100 hover:border-gray-300"
-                        }  space-x-3 p-3 rounded-md border-l-8 transition-all duration-300 w-full`}
-                    >
-                        <FaIcons.FaUserInjured size={24} className="" />
-                        <h1 className="hidden sm:hidden md:block">Pasien</h1>
-                    </div>
-                </Link>
-                <Link className="w-auto sm:w-full" href="data">
-                    <div
-                        className={`flex ${
-                            props.active == "Data"
-                                ? "bg-green-600 border-green-900 text-white font-bold"
-                                : "bg-white text-gray-500 border-white hover:bg-gray-100 hover:border-gray-300"
-                        }  space-x-3 p-3 rounded-md border-l-8 transition-all duration-300 w-full`}
-                    >
-                        <FaIcons.FaChartLine size={24} className="" />
-                        <h1 className="hidden sm:hidden md:block">Data</h1>
-                    </div>
-                </Link>
                 <Link className="w-auto sm:w-full" href="profile">
                     <div
                         className={`flex ${

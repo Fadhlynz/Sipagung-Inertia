@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\BasishamaController;
+use App\Http\Controllers\Admin\BasispenyakitController;
 use App\Http\Controllers\Admin\DoctorsController;
 use App\Http\Controllers\Admin\GejalahamaController;
+use App\Http\Controllers\Admin\GejalapenyakitController;
 use App\Http\Controllers\Admin\HamaController;
 use App\Http\Controllers\Admin\PatientsController;
 use App\Http\Controllers\Admin\PenyakitController;
@@ -32,7 +34,11 @@ Route::get('/penyakit-data', [PenyakitController::class, 'data'])->name('penyaki
 
 Route::get('/gejalahama-data', [GejalahamaController::class, 'data'])->name('gejalahama.data');
 
+Route::get('/gejalapenyakit-data', [GejalapenyakitController::class, 'data'])->name('gejalapenyakit.data');
+
 Route::get('/basishama-data', [BasishamaController::class, 'data'])->name('basishama.data');
+
+Route::get('/basispenyakit-data', [BasispenyakitController::class, 'data'])->name('basispenyakit.data');
 
 Route::get('/disease-data', [DiseaseController::class, 'data'])->name('disease.data');
 

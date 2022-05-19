@@ -16,6 +16,7 @@ class GejalahamaController extends Controller
     'name.required' => 'Nama gejala harus diisi!',
     ]);
 
+    
     Gejalahama::create([
     'name' => $request->name
     ]);

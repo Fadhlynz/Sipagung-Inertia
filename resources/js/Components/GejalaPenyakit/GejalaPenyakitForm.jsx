@@ -5,30 +5,30 @@ import toast from "react-hot-toast";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { modalData, modalToggle } from "../../Store/Modal";
 
-export default function SymptomForm() {
+export default function GejalaPenyakitForm() {
     const [showModal, setShowModal] = useRecoilState(modalToggle);
     const editData = useRecoilValue(modalData);
 
-    const [symptomData, setSymptomData] = useState({
+    const [gejalapenyakitData, setGejalaPenyakitData] = useState({
         name: "",
         code: "",
     });
 
     const [error, setError] = useState();
 
-    const submitCode = (e) => {
+    const submitGejalaPenyakit = (e) => {
         e.preventDefault();
 
         if (editData) {
-            Inertia.post("symptom-update", symptomData, {
+            Inertia.post("gejalapenyakit-update", gejalapenyakitData, {
                 onError: (e) => {
                     e?.duplicate && toast.error(e?.duplicate);
                     setError(e);
                 },
                 onSuccess: () => {
                     setShowModal(false);
-                    setSymptomData((symptomData) => ({
-                        ...symptomData,
+                    setGejalaPenyakitData((gejalapenyakitData) => ({
+                        ...gejalapenyakitData,
                         name: "",
                         code: "",
                     }));
@@ -36,14 +36,14 @@ export default function SymptomForm() {
                 },
             });
         } else {
-            Inertia.post("symptom", symptomData, {
+            Inertia.post("gejalapenyakit", gejalapenyakitData, {
                 onError: (e) => {
                     setError(e);
                 },
                 onSuccess: () => {
                     setShowModal(false);
-                    setSymptomData((symptomData) => ({
-                        ...symptomData,
+                    setGejalaPenyakitData((gejalapenyakitData) => ({
+                        ...gejalapenyakitData,
                         name: "",
                         code: "",
                     }));
@@ -54,8 +54,8 @@ export default function SymptomForm() {
     };
 
     useEffect(() => {
-        setSymptomData((symptomData) => ({
-            ...symptomData,
+        setGejalaPenyakitData((gejalapenyakitData) => ({
+            ...gejalapenyakitData,
             id: editData?.id,
             name: editData?.name,
             code: editData?.code,
@@ -71,17 +71,17 @@ export default function SymptomForm() {
                     </h1>
                 }
             >
-                <form onSubmit={submitCode} className="flex flex-col space-y-3">
+                <form onSubmit={submitGejalaPenyakit} className="flex flex-col space-y-3">
                     <div className="flex flex-col space-y-1">
                         <h1 className="text-gray-500 text-sm">Gejala</h1>
                         <input
                             onChange={(e) => {
-                                setSymptomData((symptomData) => ({
-                                    ...symptomData,
+                                setGejalaPenyakitData((gejalapenyakitData) => ({
+                                    ...gejalapenyakitData,
                                     name: e.target.value,
                                 }));
                             }}
-                            value={symptomData.name}
+                            value={gejalapenyakitData.name}
                             type="text"
                             name="name"
                             id="name"
@@ -97,12 +97,12 @@ export default function SymptomForm() {
                         <h1 className="text-gray-500 text-sm">Kode Gejala</h1>
                         <input
                             onChange={(e) => {
-                                setSymptomData((symptomData) => ({
-                                    ...symptomData,
+                                setGejalaPenyakitData((gejalapenyakitData) => ({
+                                    ...gejalapenyakitData,
                                     code: e.target.value,
                                 }));
                             }}
-                            value={symptomData.code}
+                            value={gejalapenyakitData.code}
                             type="text"
                             name="code"
                             id="code"

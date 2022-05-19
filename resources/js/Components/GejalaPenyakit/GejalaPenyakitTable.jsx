@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue} from "recoil";
 import { dialogToggle, modalData, modalToggle } from "../../Store/Modal";
 import ZenDialog from "../ZenDialog";
 import { Grid, _ } from "gridjs-react";
 import { baseUrlApi } from "../../Store/Global";
 
-export default function SymptomTable(props) {
+export default function GejalaPenyakitTable(props) {
     const [showDialog, setShowDialog] = useRecoilState(dialogToggle);
     const [showModal, setShowModal] = useRecoilState(modalToggle);
     const [editData, setEditData] = useRecoilState(modalData);
@@ -25,7 +25,7 @@ export default function SymptomTable(props) {
     const sureDelete = (confirm) => {
         if (confirm) {
             Inertia.post(
-                "symptom-delete",
+                "gejalapenyakit-delete",
                 { id: dialogInfo.id },
                 {
                     onSuccess: () => {
@@ -42,7 +42,7 @@ export default function SymptomTable(props) {
         }
     };
 
-    const deleteSymptom = (id, name) => {
+    const deleteGejalaPenyakit = (id, name) => {
         setDialogInfo({
             title: "Yakin Menghapus?",
             message: "Data yang dihapus tidak dapat dikembalikan. Lanjutkan?",
@@ -62,16 +62,15 @@ export default function SymptomTable(props) {
             />
             <Grid
                 server={{
-                    url: url + "symptom-data",
+                    url: url + "gejalapenyakit-data",
                     then: (data) =>
-                        data.map((symptom, index) => [
-                            index + 1,
-                            symptom.code,
-                            symptom.name,
+                        data.map((gejalapenyakit, index) => [
+                            "G" + index + 1,
+                            gejalapenyakit.name,
                             _(
                                 <button
                                     onClick={() => {
-                                        setEditData(symptom);
+                                        setEditData(gejalapenyakit);
                                         setShowModal(true);
                                     }}
                                     className="p-2 rounded-lg bg-yellow-100 hover:bg-yellow-200 transition duration-200"
@@ -85,7 +84,10 @@ export default function SymptomTable(props) {
                             _(
                                 <button
                                     onClick={() => {
-                                        deleteSymptom(symptom.id, symptom.name);
+                                        deleteGejalaPenyakit(
+                                            gejalapenyakit.id,
+                                            gejalapenyakit.name
+                                        );
                                     }}
                                     className="p-2 rounded-lg bg-red-100 hover:bg-red-200 transition duration-200"
                                 >
@@ -97,7 +99,7 @@ export default function SymptomTable(props) {
                             ),
                         ]),
                 }}
-                columns={["No", "Code", "Gejala", "Edit", "Hapus"]}
+                columns={["Kode Penyakit", "Penyakit", "Edit", "Hapus"]}
                 search={true}
                 pagination={{
                     enabled: true,

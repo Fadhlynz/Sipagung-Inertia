@@ -10,12 +10,12 @@ class BasispenyakitController extends Controller
 {
     public function store(Request $request)
     {
-    $request->validate([
-    'penyakit_id' => 'required',
-    'gejalapenyakit_id' => 'required',
-    'value' => 'required',
-    ]);
-
+      $request->validate([
+        'penyakit_id' => 'required',
+        'gejalapenyakit_id' => 'required',
+        'value' => 'required',
+      ]);
+      
     Basispenyakit::create([
     'penyakit_id' => $request->penyakit_id,
     'gejalapenyakit_id' => $request->gejalapenyakit_id,

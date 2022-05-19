@@ -9,7 +9,7 @@ import ZenDialog from "../ZenDialog";
 import { Grid, _ } from "gridjs-react";
 import { baseUrlApi } from "../../Store/Global";
 
-export default function DiseaseTable(props) {
+export default function BasisHamaTable(props) {
     const [showDialog, setShowDialog] = useRecoilState(dialogToggle);
     const [showModal, setShowModal] = useRecoilState(modalToggle);
     const [editData, setEditData] = useRecoilState(modalData);
@@ -25,7 +25,7 @@ export default function DiseaseTable(props) {
     const sureDelete = (confirm) => {
         if (confirm) {
             Inertia.post(
-                "disease-delete",
+                "basishama-delete",
                 { id: dialogInfo.id },
                 {
                     onSuccess: () => {
@@ -42,7 +42,7 @@ export default function DiseaseTable(props) {
         }
     };
 
-    const deleteDisease = (id, name) => {
+    const deleteBasisHama = (id, name) => {
         setDialogInfo({
             title: "Yakin Menghapus?",
             message: "Data yang dihapus tidak dapat dikembalikan. Lanjutkan?",
@@ -62,27 +62,17 @@ export default function DiseaseTable(props) {
             />
             <Grid
                 server={{
-                    url: url + "disease-data",
+                    url: url + "basishama-data",
                     then: (data) =>
-                        data.map((disease, index) => [
+                        data.map((basishama, index) => [
                             index + 1,
-                            disease.name,
-                            disease.detail,
-                            disease.solution,
-                            _(
-                                <img
-                                    className="h-24"
-                                    src={disease.image.replace(
-                                        "public",
-                                        "storage"
-                                    )}
-                                    alt="Gambar Penyakit"
-                                />
-                            ),
+                            basishama.gejalahama.name,
+                            basishama.hama.name,
+                            basishama.value,
                             _(
                                 <button
                                     onClick={() => {
-                                        setEditData(disease);
+                                        setEditData(basishama);
                                         setShowModal(true);
                                     }}
                                     className="p-2 rounded-lg bg-yellow-100 hover:bg-yellow-200 transition duration-200"
@@ -96,7 +86,10 @@ export default function DiseaseTable(props) {
                             _(
                                 <button
                                     onClick={() => {
-                                        deleteDisease(disease.id, disease.name);
+                                        deleteBasisHama(
+                                            basishama.id,
+                                            basishama.name
+                                        );
                                     }}
                                     className="p-2 rounded-lg bg-red-100 hover:bg-red-200 transition duration-200"
                                 >
@@ -108,15 +101,7 @@ export default function DiseaseTable(props) {
                             ),
                         ]),
                 }}
-                columns={[
-                    "No",
-                    "Nama Penyakit",
-                    "Detail",
-                    "Solusi",
-                    "Gambar",
-                    "Aksi",
-                    "",
-                ]}
+                columns={["No", "Gejala", "Penyakit", "Nilai CF", "Aksi", ""]}
                 search={true}
                 pagination={{
                     enabled: true,
@@ -126,7 +111,7 @@ export default function DiseaseTable(props) {
                 className={{
                     container:
                         "bg-white shadow-md rounded-lg overflow-hidden p-5 overflow-x-auto",
-                    table: "mt-5 min-w-full",
+                    table: "mt-5",
                     thead: "bg-gray-200",
                     th: "text-left text-sm font-medium text-gray-700 px-4 py-3",
                     tbody: "text-sm",

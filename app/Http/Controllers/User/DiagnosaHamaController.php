@@ -14,21 +14,9 @@ class DiagnosaHamaController extends Controller
     }
     public function store(Request $request)
     {
-       // Get Data dari Request
-       $kondisihama = $request->kondisihama;
-
-       $inptanggal = date('Y-m-d H:i:s');
-
-       $arbobot = array('0.8', '0.6',);
-       $argejala = array();
-       
-       dd($kondisihama);
+       // Get Data dari Request 
+       dd($request->kondisihama);
        die;
-       for ($i = 0; $i < count($kondisihama); $i++) { $arkondisi=explode("_", $kondisihama[$i]); if
-           (strlen($kondisihama[$i])> 1) {
-           $argejala += array($arkondisi[0] => $arkondisi[1]);
-           }
-           }
-
+        
     }
 }
