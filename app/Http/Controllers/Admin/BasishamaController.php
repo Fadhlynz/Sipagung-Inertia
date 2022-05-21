@@ -10,11 +10,11 @@ class BasishamaController extends Controller
 {
     public function store(Request $request)
     {
-    $request->validate([
-    'hama_id' => 'required',
-    'gejalahama_id' => 'required',
-    'value' => 'required',
-    ]);
+      $request->validate([
+        'hama_id' => 'required',
+        'gejalahama_id' => 'required',
+        'value' => 'required',
+      ]);
 
     Basishama::create([
     'hama_id' => $request->hama_id,

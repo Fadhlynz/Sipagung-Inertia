@@ -57,20 +57,20 @@ export default function Register() {
                     </a>
                 </Link>
 
-                <div className="absolute w-screen -translate-y-10 skew-y-6 transform sm:h-48 h-32 bg-blue-600 z-10"></div>
-                <div className="absolute w-screen -translate-y-10 -skew-y-6 transform sm:h-16 h-28 bg-blue-300 z-0"></div>
+                <div className="absolute w-screen -translate-y-10 skew-y-6 transform sm:h-48 h-32 bg-green-600 z-10"></div>
+                <div className="absolute w-screen -translate-y-10 -skew-y-6 transform sm:h-16 h-28 bg-green-300 z-0"></div>
                 <form
                     className="z-40 px-10 py-5 pt-32 space-y-6"
                     onSubmit={insertData}
                 >
                     <div className="flex items-center">
-                        <h1 className="text-2xl font-bold text-blue-600">
+                        <h1 className="text-2xl font-bold text-green-600">
                             Selamat bergabung!
                         </h1>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 sm:gap-10">
                         <div className="flex flex-col space-y-3">
-                            <div className="py-1 border-b border-blue-600">
+                            <div className="py-1 border-b border-green-600">
                                 <input
                                     onChange={(e) => {
                                         setNamaLengkap(e.target.value);
@@ -86,7 +86,7 @@ export default function Register() {
                                     {error?.name}
                                 </span>
                             )}
-                            <div className="py-1 border-b border-blue-600">
+                            <div className="py-1 border-b border-green-600">
                                 <input
                                     onChange={(e) => {
                                         setAlamat(e.target.value);
@@ -103,7 +103,7 @@ export default function Register() {
                                 </span>
                             )}
 
-                            <div className="py-1 border-b border-blue-600">
+                            <div className="py-1 border-b border-green-600">
                                 <input
                                     onChange={(e) => {
                                         setEmail(e.target.value);
@@ -121,7 +121,7 @@ export default function Register() {
                             )}
                         </div>
                         <div className="flex flex-col space-y-3">
-                            <div className="py-1 border-b border-blue-600">
+                            <div className="py-1 border-b border-green-600">
                                 <input
                                     onChange={(e) => {
                                         setUsername(e.target.value);
@@ -137,7 +137,7 @@ export default function Register() {
                                     {error?.username}
                                 </span>
                             )}
-                            <div className="py-1 border-b border-blue-600">
+                            <div className="py-1 border-b border-green-600">
                                 <input
                                     onChange={(e) => {
                                         setPassword(e.target.value);
@@ -154,7 +154,7 @@ export default function Register() {
                                 </span>
                             )}
 
-                            <div className="py-1 border-b border-blue-600">
+                            <div className="py-1 border-b border-green-600">
                                 <input
                                     onChange={(e) => {
                                         setConfPassword(e.target.value);
@@ -175,7 +175,7 @@ export default function Register() {
                     <div className="pt-5 w-full flex">
                         <button
                             type="submit"
-                            className="bg-blue-600 rounded-full text-white font-bold w-full py-2"
+                            className="bg-green-600 rounded-full text-white font-bold w-full py-2"
                         >
                             Daftar
                         </button>
@@ -184,7 +184,7 @@ export default function Register() {
                         <Link href="/login">
                             <a
                                 href=""
-                                className="text-blue-500 hover:underline cursor-pointer"
+                                className="text-green-500 hover:underline cursor-pointer"
                             >
                                 Sudah punya akun? Masuk!
                             </a>

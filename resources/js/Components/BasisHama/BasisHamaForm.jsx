@@ -15,7 +15,6 @@ export default function BasisHamaForm() {
 
     const urlApi = useRecoilValue(baseUrlApi);
 
-
     const [basishamaData, setBasisHamaData] = useState({
         gejalahama_id: "",
         hama_id: "",
@@ -108,7 +107,6 @@ export default function BasisHamaForm() {
                     className="flex flex-col space-y-3"
                 >
                     <div className="flex flex-col space-y-1">
-                        
                         <h1 className="text-gray-500 text-sm">Gejala</h1>
                         <select
                             onChange={(e) => {
