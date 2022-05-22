@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2022 at 02:20 PM
+-- Generation Time: May 22, 2022 at 11:41 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -18,8 +18,51 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sipakar`
+-- Database: `sipagung2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `basishamas`
+--
+
+CREATE TABLE `basishamas` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `hama_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gejalahama_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` double NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `basishamas`
+--
+
+INSERT INTO `basishamas` (`id`, `hama_id`, `gejalahama_id`, `value`, `created_at`, `updated_at`) VALUES
+(2, '2', '1', 0.4, '2022-05-18 07:21:40', '2022-05-18 07:21:40'),
+(3, '2', '2', 0.8, '2022-05-18 07:22:00', '2022-05-18 07:22:00'),
+(4, '2', '3', 0.8, '2022-05-18 07:22:20', '2022-05-18 07:22:20'),
+(5, '2', '4', 1, '2022-05-18 07:22:42', '2022-05-18 07:22:42'),
+(6, '2', '5', 0.6, '2022-05-18 07:23:00', '2022-05-18 07:23:00'),
+(7, '2', '4', 2, '2022-05-18 08:30:18', '2022-05-18 08:30:18'),
+(8, '2', '4', 7, '2022-05-18 08:30:59', '2022-05-18 08:30:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `basispenyakits`
+--
+
+CREATE TABLE `basispenyakits` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `penyakit_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gejalapenyakit_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` double NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -36,14 +79,6 @@ CREATE TABLE `diseases` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `diseases`
---
-
-INSERT INTO `diseases` (`id`, `name`, `detail`, `solution`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'covid', 'kosong', 'kosong', 'public/gambar/covid.png', '2022-03-21 20:42:56', '2022-03-21 20:42:56'),
-(2, 'influenza', 'detail belum tersedia', 'solusi belum tersedia', 'public/gambar/influenza.png', '2022-03-21 20:48:14', '2022-03-21 20:48:14');
 
 -- --------------------------------------------------------
 
@@ -82,6 +117,73 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gejalahamas`
+--
+
+CREATE TABLE `gejalahamas` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `gejalahamas`
+--
+
+INSERT INTO `gejalahamas` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Bentuk daun berlubang-lubang atau rusak', '2022-04-30 07:47:25', '2022-04-30 11:37:56'),
+(2, 'Aktivitas hama ini hanya berlangsung pada musim hujan selama 1-2 bulan', '2022-04-30 11:37:23', '2022-04-30 11:37:23'),
+(3, 'Larva yang baru menetas melubangi batang, kemudian membuat terowongan hingga ke dasar batang sehingga tanaman menjadi kuning dan akhirnya', '2022-05-18 07:18:38', '2022-05-18 07:18:38'),
+(4, 'Pertumbuhan terlambat, menguning, jaringan membusuk atau gejala sundep', '2022-05-18 07:19:14', '2022-05-18 07:19:14'),
+(5, 'Jika tanaman mengalami penyembuhan, maka pertumbuhannya akan kerdil.', '2022-05-18 07:19:34', '2022-05-18 07:19:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gejalapenyakits`
+--
+
+CREATE TABLE `gejalapenyakits` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `gejalapenyakits`
+--
+
+INSERT INTO `gejalapenyakits` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(7, 'pilek', '2022-05-18 06:49:35', '2022-05-18 06:49:35');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hamas`
+--
+
+CREATE TABLE `hamas` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `detail` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `solution` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `hamas`
+--
+
+INSERT INTO `hamas` (`id`, `name`, `detail`, `solution`, `image`, `created_at`, `updated_at`) VALUES
+(2, 'Hama lalat bibit', 'Detail Belum Tersedia', 'Solusi Belum Tersedia', 'public/hama/Hama lalat bibit.png', '2022-05-18 07:14:17', '2022-05-18 07:14:17');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -105,7 +207,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2021_12_30_093502_create_patients_table', 1),
 (8, '2022_02_19_094123_create_diseases_table', 1),
 (9, '2022_03_03_115409_create_symptoms_table', 1),
-(10, '2022_03_03_120631_create_rules_table', 1);
+(10, '2022_03_03_120631_create_rules_table', 1),
+(11, '2022_04_29_183716_create_hamas_table', 1),
+(12, '2022_04_29_183906_create_gejalahamas_table', 1),
+(13, '2022_04_29_183943_create_basishamas_table', 1),
+(14, '2022_04_30_052153_create_penyakits_table', 1),
+(15, '2022_04_30_141641_create_basispenyakits_table', 1),
+(16, '2022_04_30_141835_create_gejalapenyakits_table', 1);
 
 -- --------------------------------------------------------
 
@@ -174,6 +282,22 @@ CREATE TABLE `patients` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `penyakits`
+--
+
+CREATE TABLE `penyakits` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `detail` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `solution` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `permissions`
 --
 
@@ -222,8 +346,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'web', '2022-03-21 20:26:40', '2022-03-21 20:26:40'),
-(2, 'user', 'web', '2022-03-21 20:26:40', '2022-03-21 20:26:40');
+(1, 'admin', 'web', '2022-04-30 06:22:35', '2022-04-30 06:22:35'),
+(2, 'user', 'web', '2022-04-30 06:22:36', '2022-04-30 06:22:36');
 
 -- --------------------------------------------------------
 
@@ -265,16 +389,6 @@ CREATE TABLE `symptoms` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `symptoms`
---
-
-INSERT INTO `symptoms` (`id`, `name`, `code`, `created_at`, `updated_at`) VALUES
-(2, 'badan pegal-pegal', 'G01', '2022-03-21 20:45:06', '2022-03-21 20:45:06'),
-(3, 'Flu', 'G02', '2022-03-21 20:45:16', '2022-03-21 20:45:16'),
-(4, 'Pusing Kepala', 'G03', '2022-03-21 20:45:41', '2022-03-21 20:45:41'),
-(5, 'Badan Panas', 'G04', '2022-03-21 20:46:23', '2022-03-21 20:46:23');
-
 -- --------------------------------------------------------
 
 --
@@ -299,12 +413,24 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `address`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin', 'anywhere', 'admin@gmail.com', NULL, '$2y$10$7VbUAD97D9L6bX/j3N33eeDP9EdA.x0nahnPT7QVCIJMpcR6E5iJC', NULL, '2022-03-21 20:26:40', '2022-03-21 20:26:40'),
-(2, 'Fadli Nur Zaman', 'fadhlynz', 'anywhere', 'fadhlynzn@gmail.com', NULL, '$2y$10$2pE2xH3ZOWoEk4LReTc.ZuoEOu7B9Sv8MVlMtc9UKD8toIKQtVsqy', NULL, '2022-03-21 20:26:41', '2022-03-21 20:26:41');
+(1, 'Admin', 'admin', 'anywhere', 'admin@gmail.com', NULL, '$2y$10$Flv5YUGYvdMwFcg9k1LfjuNC6hDDT4hSOx55MRzC8vgMgXsxcv55q', NULL, '2022-04-30 06:22:36', '2022-04-30 06:22:36'),
+(2, 'Fadli Nur Zaman', 'fadhlynz', 'anywhere', 'fadhlynzn@gmail.com', NULL, '$2y$10$q1wRmjIdcqqI7ZQ469DLAOXXo2.qteWA6PdpzDX.VBuaN3gOBHJu2', NULL, '2022-04-30 06:22:37', '2022-04-30 06:22:37');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `basishamas`
+--
+ALTER TABLE `basishamas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `basispenyakits`
+--
+ALTER TABLE `basispenyakits`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `diseases`
@@ -325,6 +451,24 @@ ALTER TABLE `doctors`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `gejalahamas`
+--
+ALTER TABLE `gejalahamas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gejalapenyakits`
+--
+ALTER TABLE `gejalapenyakits`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `hamas`
+--
+ALTER TABLE `hamas`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -358,6 +502,12 @@ ALTER TABLE `password_resets`
 ALTER TABLE `patients`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `patients_nik_unique` (`nik`);
+
+--
+-- Indexes for table `penyakits`
+--
+ALTER TABLE `penyakits`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `permissions`
@@ -414,10 +564,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `basishamas`
+--
+ALTER TABLE `basishamas`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `basispenyakits`
+--
+ALTER TABLE `basispenyakits`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `diseases`
 --
 ALTER TABLE `diseases`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `doctors`
@@ -432,16 +594,40 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `gejalahamas`
+--
+ALTER TABLE `gejalahamas`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `gejalapenyakits`
+--
+ALTER TABLE `gejalapenyakits`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `hamas`
+--
+ALTER TABLE `hamas`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `penyakits`
+--
+ALTER TABLE `penyakits`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -471,7 +657,7 @@ ALTER TABLE `rules`
 -- AUTO_INCREMENT for table `symptoms`
 --
 ALTER TABLE `symptoms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
