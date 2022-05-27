@@ -6,7 +6,7 @@ export default function Guest(props) {
     return (
         <div className="h-screen">
             <Head title={`${props.judul} | Sipakar`} />
-            <Navbar title={props.judul} users="Arsadi" />
+            <Navbar title={props.judul} users="Fadli" />
             {props.children}
         </div>
     );

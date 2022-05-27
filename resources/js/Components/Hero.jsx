@@ -19,7 +19,7 @@ export default function Hero() {
             </div>
 
             <div className="w-full flex items-center rounded-full row-start-1 sm:col-start-2">
-                <img src="/img/farmer.png" alt="" />
+                <img src="/img/farmer.svg" alt="" />
             </div>
         </div>
     );

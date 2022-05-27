@@ -65,7 +65,7 @@ export default function GejalaHamaTable(props) {
                     url: url + "gejalahama-data",
                     then: (data) =>
                         data.map((gejalahama, index) => [
-                            "G" + index + 1,
+                            "GH" + (index + 1),
                             gejalahama.name,
                             _(
                                 <button

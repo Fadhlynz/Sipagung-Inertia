@@ -3,18 +3,15 @@
 use App\Http\Controllers\Admin\BasishamaController;
 use App\Http\Controllers\Admin\BasispenyakitController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\DoctorsController;
 use App\Http\Controllers\Admin\GejalahamaController;
 use App\Http\Controllers\Admin\GejalapenyakitController;
 use App\Http\Controllers\Admin\HamaController;
+use App\Http\Controllers\admin\KondisihamaController;
 use App\Http\Controllers\Admin\MasterhamaController;
 use App\Http\Controllers\Admin\MasterpenyakitController;
-use App\Http\Controllers\Admin\PatientsController;
 use App\Http\Controllers\Admin\PenyakitController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SettingsController;
-use App\Http\Controllers\DataController;
-use App\Http\Controllers\DiseaseController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SymptomController;
 use App\Http\Controllers\RuleController;
@@ -55,7 +52,12 @@ Route::post('/register', [LoginController::class, 'insert']);
 
 // User Page
 Route::get('/beranda', [BerandaController::class, 'index']);
-// Diagmosa Hama
+
+Route::get('/diagnosa', function () {
+    return inertia('PilihHama');
+});
+
+// Diagnosa Hama
 Route::get('/diagnosa-hama', [DiagnosaHamaController::class, 'index']);
 Route::post('/hasildiagnosa', [DiagnosaHamaController::class, 'store']);
 
@@ -81,6 +83,10 @@ Route::middleware('auth')->group(function () {
         Route::post('/basishama', [BasishamaController::class, 'store']);
         Route::post('/basishama-delete', [BasishamaController::class, 'delete']);
         Route::post('/basishama-update', [BasishamaController::class, 'update']);
+        // Data Kondisi Hama
+        Route::post('/kondisihama', [KondisihamaController::class, 'store']);
+        Route::post('/kondisihama-delete', [KondisihamaController::class, 'delete']);
+        Route::post('/kondisihama-update', [KondisihamaController::class, 'update']);
 
         //Master Penyakit
         Route::get('/data-penyakit', [MasterpenyakitController::class, 'index']);

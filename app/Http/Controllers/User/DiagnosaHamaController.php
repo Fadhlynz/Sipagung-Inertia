@@ -14,7 +14,7 @@ class DiagnosaHamaController extends Controller
     }
     public function store(Request $request)
     {
-       // Get Data dari Request 
+       // Get Data dari Request  
       dd($request->kondisihama); 
       die;
         

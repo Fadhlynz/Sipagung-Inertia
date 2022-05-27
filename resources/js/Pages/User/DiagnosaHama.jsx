@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Inertia } from "@inertiajs/inertia";
 import { Grid, _ } from "gridjs-react";
 import { useRecoilValue } from "recoil";
@@ -6,9 +6,11 @@ import User from "../../Layouts/User";
 import { baseUrlApi } from "../../Store/Global";
 import * as BsIcons from "react-icons/bs";
 import * as FaIcons from "react-icons/fa";
+import axios from "axios";
 
 export default function DiagnosaHama() {
     const url = useRecoilValue(baseUrlApi);
+    const [kondisihamas, setKondisiHamas] = useState([]);
 
     const [kondisiHamaData, setKondisiHamaData] = useState({
         kondisihama: "",
@@ -26,6 +28,15 @@ export default function DiagnosaHama() {
             },
         });
     };
+
+    // useEffect(() => {
+    //     const getKondisiHamas = async () => {
+    //         await axios.get(url + "kondisihama-data").then((res) => {
+    //             setKondisiHamas(res.data);
+    //         });
+    //     };
+    //     getKondisiHamas();
+    // });
 
     return (
         <User judul="Diagnosa Hama">
@@ -62,6 +73,18 @@ export default function DiagnosaHama() {
                                         gejalahama.name,
                                         _(
                                             <select
+                                                onChange={(e) => {
+                                                    setKondisiHamaData(
+                                                        (kondisiHamaData) => ({
+                                                            ...kondisiHamaData,
+                                                            kondisihama:
+                                                                e.target.value,
+                                                        })
+                                                    );
+                                                }}
+                                                value={
+                                                    kondisiHamaData.kondisihama
+                                                }
                                                 name="kondisihama"
                                                 id="kondisihama"
                                                 className="border-2 border-gray-200 focus:border-white focus:outline-none focus:ring focus:ring-gray-400 transition duration-200 rounded-lg"
@@ -69,12 +92,18 @@ export default function DiagnosaHama() {
                                                 <option value={0}>
                                                     -Pillih Jika Sesuai-
                                                 </option>
-                                                <option value={2}>
-                                                    Mungkin Ya
-                                                </option>
-                                                <option value={3}>
-                                                    Mungkin Tidak
-                                                </option>
+                                                {/* {kondisihamas.map(
+                                                    (kond, key) => {
+                                                        return (
+                                                            <option
+                                                                key={key}
+                                                                value={kond.id}
+                                                            >
+                                                                {kond.name}
+                                                            </option>
+                                                        );
+                                                    }
+                                                )} */}
                                             </select>
                                         ),
                                     ]),

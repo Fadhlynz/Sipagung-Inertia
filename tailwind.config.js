@@ -8,6 +8,10 @@ module.exports = {
         extend: {
             colors: {
                 "hijau-telpon": "#249A8C",
+                "kuning-cerah": "#FFEF82",
+                "kuning-gelap": "#EFD345",
+                "hijau-cerah": "#BABD42",
+                "hijau-gelap": "#82954B",
             },
         },
     },

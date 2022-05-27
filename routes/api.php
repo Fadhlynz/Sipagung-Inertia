@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\HamaController;
 use App\Http\Controllers\Admin\PatientsController;
 use App\Http\Controllers\Admin\PenyakitController;
 use App\Http\Controllers\DiseaseController;
+use App\Http\Controllers\Admin\KondisihamaController;
 use App\Http\Controllers\SymptomController;
 use App\Http\Controllers\RuleController;
 use Illuminate\Http\Request;
@@ -37,6 +38,8 @@ Route::get('/gejalahama-data', [GejalahamaController::class, 'data'])->name('gej
 Route::get('/gejalapenyakit-data', [GejalapenyakitController::class, 'data'])->name('gejalapenyakit.data');
 
 Route::get('/basishama-data', [BasishamaController::class, 'data'])->name('basishama.data');
+
+Route::get('/kondisihama-data', [KondisihamaController::class, 'data'])->name('kondisihama.data');
 
 Route::get('/basispenyakit-data', [BasispenyakitController::class, 'data'])->name('basispenyakit.data');
 

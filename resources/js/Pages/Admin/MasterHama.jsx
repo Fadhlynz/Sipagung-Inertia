@@ -3,6 +3,7 @@ import Admin from "../../Layouts/Admin";
 import Hama from "./Hama";
 import GejalaHama from "./GejalaHama";
 import BasisHama from "./BasisHama";
+import KondisiHama from "./KondisiHama";
 
 export default function MasterHama() {
     const [tab, setTab] = useState("hama");
@@ -47,10 +48,23 @@ export default function MasterHama() {
                     >
                         Basis Hama
                     </div>
+                    <div
+                        className={`px-4 py-2 cursor-pointer rounded-xl ${
+                            tab == "kondisihama"
+                                ? "bg-green-500 text-white"
+                                : "bg-gray-100 text-green-500 border-green-500"
+                        } font-semibold`}
+                        onClick={() => {
+                            setTab("kondisihama");
+                        }}
+                    >
+                        Kondisi Hama
+                    </div>
                 </div>
                 {tab == "hama" && <Hama />}
                 {tab == "gejalahama" && <GejalaHama />}
                 {tab == "basishama" && <BasisHama />}
+                {tab == "kondisihama" && <KondisiHama />}
             </div>
         </Admin>
     );

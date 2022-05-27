@@ -65,7 +65,7 @@ export default function GejalaPenyakitTable(props) {
                     url: url + "gejalapenyakit-data",
                     then: (data) =>
                         data.map((gejalapenyakit, index) => [
-                            "G" + index + 1,
+                            "GP" + (index + 1),
                             gejalapenyakit.name,
                             _(
                                 <button
