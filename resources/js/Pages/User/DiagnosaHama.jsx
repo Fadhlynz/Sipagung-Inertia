@@ -69,7 +69,7 @@ export default function DiagnosaHama() {
                                 then: (data) =>
                                     data.map((gejalahama, index) => [
                                         index + 1,
-                                        "G" + index + 1,
+                                        "GH" + (index + 1),
                                         gejalahama.name,
                                         _(
                                             <select

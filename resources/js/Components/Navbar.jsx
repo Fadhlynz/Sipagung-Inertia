@@ -119,8 +119,8 @@ export default function Navbar(props) {
                                             <button
                                                 className={`${
                                                     active
-                                                        ? "bg-violet-500 text-white"
-                                                        : "text-gray-900"
+                                                        ? "bg-green-600 text-white"
+                                                        : "text-green-600"
                                                 } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                                             >
                                                 {active ? (
@@ -144,8 +144,8 @@ export default function Navbar(props) {
                                         <button
                                             className={`${
                                                 active
-                                                    ? "bg-violet-500 text-white"
-                                                    : "text-gray-900"
+                                                    ? "bg-green-600 text-white"
+                                                    : "text-green-600"
                                             } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                                         >
                                             {active ? (
