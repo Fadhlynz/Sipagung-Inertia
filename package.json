@@ -23,6 +23,7 @@
         "@inertiajs/inertia": "^0.10.1",
         "@inertiajs/inertia-react": "^0.7.1",
         "@tailwindcss/forms": "^0.4.0",
+        "flowbite": "^1.4.7",
         "gridjs": "^5.0.2",
         "gridjs-react": "^5.0.2",
         "react": "^17.0.2",

@@ -12,11 +12,9 @@ class DiagnosaHamaController extends Controller
     {
       return inertia('User/DiagnosaHama'); 
     }
-    public function store(Request $request)
+    public function hasildiagnosahama(Request $request)
     {
-       // Get Data dari Request  
-      dd($request->kondisihama); 
-      die;
+      return inertia('User/HasilDiagnosaHama');
         
     }
 }

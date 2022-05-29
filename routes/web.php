@@ -13,13 +13,12 @@ use App\Http\Controllers\Admin\PenyakitController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\SymptomController;
-use App\Http\Controllers\RuleController;
 use App\Http\Controllers\User\BerandaController;
 use App\Http\Controllers\User\DiagnosaHamaController;
 use App\Http\Controllers\User\DiagnosaPenyakitController;
 use App\Http\Controllers\User\KeteranganController;
 use App\Http\Controllers\User\RiwayatController;
+use App\Http\Controllers\User\RiwayatHamaController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -60,6 +59,9 @@ Route::get('/diagnosa', function () {
 // Diagnosa Hama
 Route::get('/diagnosa-hama', [DiagnosaHamaController::class, 'index']);
 Route::post('/hasildiagnosa', [DiagnosaHamaController::class, 'store']);
+Route::get('/hasildiagnosahama', [DiagnosaHamaController::class, 'hasildiagnosahama']);
+// Riwayat Konsultasi Hama
+Route::get('/riwayat-hama', [RiwayatHamaController::class, 'index']);
 
 Route::get('/diagnosa-penyakit', [DiagnosaPenyakitController::class, 'index']);
 Route::get('/riwayat', [RiwayatController::class, 'index']);
@@ -102,14 +104,6 @@ Route::middleware('auth')->group(function () {
         Route::post('/basispenyakit', [BasishamaController::class, 'store']);
         Route::post('/basispenyakit-delete', [BasispenyakitController::class, 'delete']);
         Route::post('/basispenyakit-update', [BasispenyakitController::class, 'update']);
-        
-        Route::post('/symptom', [SymptomController::class, 'store']);
-        Route::post('/symptom-update', [SymptomController::class, 'update']);
-        Route::post('/symptom-delete', [SymptomController::class, 'delete']);
-
-        Route::post('/rules', [RuleController::class, 'store']);
-        Route::post('/rules-update', [RuleController::class, 'update']);
-        Route::post('/rules-delete', [RuleController::class, 'delete']);
 
         Route::get('/settings', [SettingsController::class, 'index']);
         Route::get('/profile', [ProfileController::class, 'index']);  

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "flowbite";
 import { Inertia } from "@inertiajs/inertia";
 import { Grid, _ } from "gridjs-react";
 import { useRecoilValue } from "recoil";
@@ -61,7 +62,7 @@ export default function DiagnosaHama() {
                 onSubmit={submitDiagnosaHama}
                 className="flex flex-col space-y-3"
             >
-                <div className="p-4 space-y-3">
+                <div className="p-2 space-y-3">
                     <div className="flex flex-col">
                         <Grid
                             server={{
@@ -116,7 +117,7 @@ export default function DiagnosaHama() {
                             ]}
                             className={{
                                 container:
-                                    "bg-white shadow-md rounded-lg overflow-hidden p-5 overflow-x-auto",
+                                "bg-white shadow-md rounded-lg overflow-hidden p-5 overflow-x-auto",
                                 table: "mt-5 border-2 border-gray-200",
                                 thead: "bg-gray-200",
                                 th: "text-left text-sm font-medium text-gray-700 px-4 py-3",

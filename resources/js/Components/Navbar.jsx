@@ -94,7 +94,7 @@ export default function Navbar(props) {
             </Link>
             <div className="flex space-x-4 py-2">
                 <div className="justify-center rounded-md px-4 py-2 text-sm font-medium text-green-500 hover:bg-opacity-30 focus:outline-none ">
-                    Home
+                    <Link href="/">Home</Link>
                 </div>
                 <Menu as="div" className="relative inline-block text-left">
                     <div>
@@ -141,26 +141,28 @@ export default function Navbar(props) {
                                 </Menu.Item>
                                 <Menu.Item>
                                     {({ active }) => (
-                                        <button
-                                            className={`${
-                                                active
-                                                    ? "bg-green-600 text-white"
-                                                    : "text-green-600"
-                                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                        >
-                                            {active ? (
-                                                <DuplicateActiveIcon
-                                                    className="mr-2 h-5 w-5"
-                                                    aria-hidden="true"
-                                                />
-                                            ) : (
-                                                <DuplicateInactiveIcon
-                                                    className="mr-2 h-5 w-5"
-                                                    aria-hidden="true"
-                                                />
-                                            )}
-                                            Diagnosa Penyakit
-                                        </button>
+                                        <Link href="diagnosa-penyakit">
+                                            <button
+                                                className={`${
+                                                    active
+                                                        ? "bg-green-600 text-white"
+                                                        : "text-green-600"
+                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                            >
+                                                {active ? (
+                                                    <DuplicateActiveIcon
+                                                        className="mr-2 h-5 w-5"
+                                                        aria-hidden="true"
+                                                    />
+                                                ) : (
+                                                    <DuplicateInactiveIcon
+                                                        className="mr-2 h-5 w-5"
+                                                        aria-hidden="true"
+                                                    />
+                                                )}
+                                                Diagnosa Penyakit
+                                            </button>
+                                        </Link>
                                     )}
                                 </Menu.Item>
                             </div>
@@ -186,50 +188,54 @@ export default function Navbar(props) {
                             <div className="px-1 py-1 ">
                                 <Menu.Item>
                                     {({ active }) => (
-                                        <button
-                                            className={`${
-                                                active
-                                                    ? "bg-violet-500 text-white"
-                                                    : "text-gray-900"
-                                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                        >
-                                            {active ? (
-                                                <EditActiveIcon
-                                                    className="mr-2 h-5 w-5"
-                                                    aria-hidden="true"
-                                                />
-                                            ) : (
-                                                <EditInactiveIcon
-                                                    className="mr-2 h-5 w-5"
-                                                    aria-hidden="true"
-                                                />
-                                            )}
-                                            Riwayat Hama
-                                        </button>
+                                        <Link href="riwayat-hama">
+                                            <button
+                                                className={`${
+                                                    active
+                                                        ? "bg-green-600 text-white"
+                                                        : "text-green-600"
+                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                            >
+                                                {active ? (
+                                                    <EditActiveIcon
+                                                        className="mr-2 h-5 w-5"
+                                                        aria-hidden="true"
+                                                    />
+                                                ) : (
+                                                    <EditInactiveIcon
+                                                        className="mr-2 h-5 w-5"
+                                                        aria-hidden="true"
+                                                    />
+                                                )}
+                                                Riwayat Hama
+                                            </button>
+                                        </Link>
                                     )}
                                 </Menu.Item>
                                 <Menu.Item>
                                     {({ active }) => (
-                                        <button
-                                            className={`${
-                                                active
-                                                    ? "bg-violet-500 text-white"
-                                                    : "text-gray-900"
-                                            } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                        >
-                                            {active ? (
-                                                <DuplicateActiveIcon
-                                                    className="mr-2 h-5 w-5"
-                                                    aria-hidden="true"
-                                                />
-                                            ) : (
-                                                <DuplicateInactiveIcon
-                                                    className="mr-2 h-5 w-5"
-                                                    aria-hidden="true"
-                                                />
-                                            )}
-                                            Riwayat Penyakit
-                                        </button>
+                                        <Link href="riwayat-penyakit">
+                                            <button
+                                                className={`${
+                                                    active
+                                                        ? "bg-green-600 text-white"
+                                                        : "text-green-600"
+                                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                            >
+                                                {active ? (
+                                                    <DuplicateActiveIcon
+                                                        className="mr-2 h-5 w-5"
+                                                        aria-hidden="true"
+                                                    />
+                                                ) : (
+                                                    <DuplicateInactiveIcon
+                                                        className="mr-2 h-5 w-5"
+                                                        aria-hidden="true"
+                                                    />
+                                                )}
+                                                Riwayat Penyakit
+                                            </button>
+                                        </Link>
                                     )}
                                 </Menu.Item>
                             </div>
@@ -237,7 +243,10 @@ export default function Navbar(props) {
                     </Transition>
                 </Menu>
                 <div className="justify-center rounded-md px-4 py-2 text-sm font-medium text-green-500 hover:bg-opacity-30 focus:outline-none">
-                    About
+                    <Link href="#">Keterangan</Link>
+                </div>
+                <div className="justify-center rounded-md px-4 py-2 text-sm font-medium text-green-500 hover:bg-opacity-30 focus:outline-none">
+                    <Link href="/about">Tentang</Link>
                 </div>
                 <div className="justify-center rounded-md bg-green-500 bg-opacity-75 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                     <Link href="/login">Login</Link>
