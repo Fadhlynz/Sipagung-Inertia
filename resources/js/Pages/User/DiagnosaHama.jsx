@@ -42,9 +42,9 @@ export default function DiagnosaHama() {
     return (
         <User judul="Diagnosa Hama">
             <div className="p-4">
-                <div className="bg-white rounded-xl p-5 shadow-xl shadow-blue-600/10">
+                <div className="bg-white rounded-xl p-4 shadow-xl shadow-blue-600/10">
                     <div
-                        class="flex p-4 mb-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800"
+                        class="flex p-4 mb-2 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800"
                         role="alert"
                     >
                         <svg
@@ -60,11 +60,12 @@ export default function DiagnosaHama() {
                             ></path>
                         </svg>
                         <div>
-                            <span class="font-medium,">Warning alert!</span>{" "}
-                            Silahkan memilih gejala sesuai dengan kondisi Tanaman jagung
-                            anda, anda dapat memilih kepastian kondisi Tanaman jagung dari
-                            pasti tidak sampai pasti ya, jika sudah tekan tombol
-                            proses di bawah untuk melihat hasil.
+                            <span class="font-medium,">Perhatian !</span>{" "}
+                            Silahkan memilih gejala Hama sesuai dengan kondisi
+                            Tanaman jagung anda, anda dapat memilih kepastian
+                            kondisi Tanaman jagung dari pasti tidak sampai pasti
+                            ya, jika sudah tekan tombol proses di bawah untuk
+                            melihat hasil.
                         </div>
                     </div>
                     {/* <div className="flex items-center space-x-2">

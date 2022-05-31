@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@inertiajs/inertia-react";
 
 export default function Hero() {
     return (
@@ -14,7 +15,7 @@ export default function Hero() {
                     error, debitis quidem sunt neque. Aperiam, ipsa?
                 </p>
                 <button className="bg-green-500 text-white font-bold text-xl px-5 py-2 rounded-lg transform hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-                    Diagnosa Sekarang
+                    <Link href="/diagnosa-penyakit">Diagnosa Penyakit Sekarang</Link>
                 </button>
             </div>
             <div className="w-full flex items-center rounded-full row-start-1 sm:col-start-2">
