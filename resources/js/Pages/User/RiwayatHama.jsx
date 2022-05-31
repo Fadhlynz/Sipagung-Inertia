@@ -7,7 +7,7 @@ import User from "../../Layouts/User";
 export default function RiwayatHama(props) {
     return (
         <User judul="Riwayat Diagnosa Hama">
-            <div className="h-fit pt-2 px-4 grid grid-cols-1 sm:grid-cols-2">
+            <div className="p-10 grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div className="flex flex-col">
                     <Grid
                         data={[
@@ -28,7 +28,7 @@ export default function RiwayatHama(props) {
                         }}
                     />
                 </div>
-                <div className="h-fit pt-2 px-4 grid grid-cols-1 sm:grid-cols-2">
+                <div className="h-full pt-2 px-4">
                     <a
                         href="#"
                         class="block px-4 p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"

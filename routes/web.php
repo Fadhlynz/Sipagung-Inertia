@@ -17,7 +17,7 @@ use App\Http\Controllers\User\BerandaController;
 use App\Http\Controllers\User\DiagnosaHamaController;
 use App\Http\Controllers\User\DiagnosaPenyakitController;
 use App\Http\Controllers\User\KeteranganController;
-use App\Http\Controllers\User\RiwayatController;
+use App\Http\Controllers\User\RiwayatPenyakitController;
 use App\Http\Controllers\User\RiwayatHamaController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -64,7 +64,7 @@ Route::get('/hasildiagnosahama', [DiagnosaHamaController::class, 'hasildiagnosah
 Route::get('/riwayat-hama', [RiwayatHamaController::class, 'index']);
 
 Route::get('/diagnosa-penyakit', [DiagnosaPenyakitController::class, 'index']);
-Route::get('/riwayat', [RiwayatController::class, 'index']);
+Route::get('/riwayat-penyakit', [RiwayatPenyakitController::class, 'index']);
 Route::get('/keterangan', [KeteranganController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
