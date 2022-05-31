@@ -97,14 +97,14 @@ export default function Login() {
                             <h1 className="text-green-700 hover:underline cursor-pointer">
                                 Lupa Password?
                             </h1>
-                            <Link href="/register">
+                            {/* <Link href="/register">
                                 <a
                                     href=""
                                     className="text-green-700 hover:underline cursor-pointer"
                                 >
                                     Daftar Akun
                                 </a>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </form>

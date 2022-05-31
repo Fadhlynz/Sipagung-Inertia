@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Hero() {
     return (
-        <div className="h-fit pt-[150px] px-20 grid grid-cols-1 sm:grid-cols-2">
-            <div className="flex flex-col itens-center sm:items-start justify-center space-y-5 row-start-2 sm:row-start-1">
+        <div className="h-fit pt-2 px-20 grid grid-cols-1 sm:grid-cols-2">
+            <div className="flex flex-col items-center sm:items-start justify-center space-y-5 row-start-2 sm:row-start-1">
                 <h1 className=" mt-5 sm:mt-0 text-3xl sm:text-5xl text-center sm:text-left font-bold text-gray-800">
                     Sistem Pakar Diagnosis Hama dan Penyakit Tanaman Jagung
                 </h1>
@@ -17,7 +17,6 @@ export default function Hero() {
                     Diagnosa Sekarang
                 </button>
             </div>
-
             <div className="w-full flex items-center rounded-full row-start-1 sm:col-start-2">
                 <img src="/img/farmer.svg" alt="" />
             </div>

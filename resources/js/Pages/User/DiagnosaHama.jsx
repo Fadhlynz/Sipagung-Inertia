@@ -42,8 +42,32 @@ export default function DiagnosaHama() {
     return (
         <User judul="Diagnosa Hama">
             <div className="p-4">
-                <div className="bg-green-600 rounded-xl p-5 shadow-xl shadow-blue-600/10">
-                    <div className="flex items-center space-x-2">
+                <div className="bg-white rounded-xl p-5 shadow-xl shadow-blue-600/10">
+                    <div
+                        class="flex p-4 mb-4 text-sm text-yellow-700 bg-yellow-100 rounded-lg dark:bg-yellow-200 dark:text-yellow-800"
+                        role="alert"
+                    >
+                        <svg
+                            class="inline flex-shrink-0 mr-3 w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                        <div>
+                            <span class="font-medium,">Warning alert!</span>{" "}
+                            Silahkan memilih gejala sesuai dengan kondisi Tanaman jagung
+                            anda, anda dapat memilih kepastian kondisi Tanaman jagung dari
+                            pasti tidak sampai pasti ya, jika sudah tekan tombol
+                            proses di bawah untuk melihat hasil.
+                        </div>
+                    </div>
+                    {/* <div className="flex items-center space-x-2">
                         <BsIcons.BsFillExclamationTriangleFill
                             size={16}
                             className="text-white"
@@ -55,7 +79,7 @@ export default function DiagnosaHama() {
                         anda dapat memilih kepastian kondisi ayam dari pasti
                         tidak sampai pasti ya, jika sudah tekan tombol proses di
                         bawah untuk melihat hasil.
-                    </path>
+                    </path> */}
                 </div>
             </div>
             <form
@@ -117,7 +141,7 @@ export default function DiagnosaHama() {
                             ]}
                             className={{
                                 container:
-                                "bg-white shadow-md rounded-lg overflow-hidden p-5 overflow-x-auto",
+                                    "bg-white shadow-md rounded-lg overflow-hidden p-5 overflow-x-auto",
                                 table: "mt-5 border-2 border-gray-200",
                                 thead: "bg-gray-200",
                                 th: "text-left text-sm font-medium text-gray-700 px-4 py-3",

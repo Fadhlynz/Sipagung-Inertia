@@ -7,6 +7,10 @@ module.exports = {
     ],
     theme: {
         extend: {
+            backgroundImage: {
+                "hero-pattern": "url('/img/bg1.svg')",
+                "footer-texture": "url('/img/footer-texture.png')",
+            },
             colors: {
                 "hijau-telpon": "#249A8C",
                 "kuning-cerah": "#FFEF82",
