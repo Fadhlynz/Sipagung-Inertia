@@ -28,20 +28,16 @@ export default function RiwayatHama(props) {
                         }}
                     />
                 </div>
-                <div className="h-full pt-2 px-4">
-                    <a
-                        href="#"
-                        class="block px-4 p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-                    >
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Noteworthy technology acquisitions 2021
-                        </h5>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">
-                            Here are the biggest enterprise technology
-                            acquisitions of 2021 so far, in reverse
-                            chronological order.
+                <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2 text-slate-700">
+                            Image Title
+                        </div>
+                        <p class="text-sm text-slate-600">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Error, distinctio.
                         </p>
-                    </a>
+                    </div>
                 </div>
             </div>
         </User>

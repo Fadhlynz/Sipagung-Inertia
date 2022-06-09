@@ -6,10 +6,213 @@ import User from "../../Layouts/User";
 export default function Keterangan(props) {
     return (
         <User judul="Keterangan">
-            <div className="p-10 pb-0 pl-2 grid grid-cols-1">
+            <section id="card" className="pt-7 pb-7">
+                <div className="container">
+                    <div className="w-screen px-4">
+                        <div className=" flex flex-wrap justify-center">
+                            <h4 className="font-semibold text-lg lg:text-3xl text-hijau-gelap mb-3">
+                                Daftar Hama Pada Tanaman Jagung
+                            </h4>
+                        </div>
+                    </div>
+                    <div className="w-screen px-4">
+                        <div class="container mx-auto px-6 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
+                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                                <img
+                                    src="https://source.unsplash.com/600x400"
+                                    alt="Image Caption"
+                                    class="w-full"
+                                />
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-3xl mb-2 text-slate-700">
+                                        Image Title
+                                    </div>
+                                    <p class="text-sm text-slate-600">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Error, distinctio.
+                                    </p>
+                                    <a
+                                        href="#"
+                                        className="inline-block bg-kuning-gelap py-3 px-5 text-slate-700 rounded-lg shadow-lg font-semibold text-sm hover:opacity-80 transition duration-300"
+                                    >
+                                        Baca Selanjutnya
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                                <img
+                                    src="https://source.unsplash.com/600x400"
+                                    alt="Image Caption"
+                                    class="w-full"
+                                />
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2 text-slate-700">
+                                        Image Title
+                                    </div>
+                                    <p class="text-sm text-slate-600">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Error, distinctio.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                                <img
+                                    src="https://source.unsplash.com/600x400"
+                                    alt="Image Caption"
+                                    class="w-full"
+                                />
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2 text-slate-700">
+                                        Image Title
+                                    </div>
+                                    <p class="text-sm text-slate-600">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Error, distinctio.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                                <img
+                                    src="https://source.unsplash.com/600x400"
+                                    alt="Image Caption"
+                                    class="w-full"
+                                />
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2 text-slate-700">
+                                        Image Title
+                                    </div>
+                                    <p class="text-sm text-slate-600">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Error, distinctio.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                                <img
+                                    src="https://source.unsplash.com/600x400"
+                                    alt="Image Caption"
+                                    class="w-full"
+                                />
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2 text-slate-700">
+                                        Image Title
+                                    </div>
+                                    <p class="text-sm text-slate-600">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Error, distinctio.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="w-screen px-4">
+                        <div className=" flex flex-wrap justify-center">
+                            <h4 className="font-semibold text-lg lg:text-3xl text-hijau-gelap mb-3 mt-10">
+                                Daftar Penyakit Pada Tanaman Jagung
+                            </h4>
+                        </div>
+                    </div>
+                    <div className="w-screen px-4">
+                        <div class="container mx-auto px-6 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
+                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                                <img
+                                    src="https://source.unsplash.com/600x400"
+                                    alt="Image Caption"
+                                    class="w-full"
+                                />
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2 text-slate-700">
+                                        Image Title
+                                    </div>
+                                    <p class="text-sm text-slate-600">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Error, distinctio.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                                <img
+                                    src="https://source.unsplash.com/600x400"
+                                    alt="Image Caption"
+                                    class="w-full"
+                                />
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2 text-slate-700">
+                                        Image Title
+                                    </div>
+                                    <p class="text-sm text-slate-600">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Error, distinctio.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                                <img
+                                    src="https://source.unsplash.com/600x400"
+                                    alt="Image Caption"
+                                    class="w-full"
+                                />
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2 text-slate-700">
+                                        Image Title
+                                    </div>
+                                    <p class="text-sm text-slate-600">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Error, distinctio.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                                <img
+                                    src="https://source.unsplash.com/600x400"
+                                    alt="Image Caption"
+                                    class="w-full"
+                                />
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2 text-slate-700">
+                                        Image Title
+                                    </div>
+                                    <p class="text-sm text-slate-600">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Error, distinctio.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                                <img
+                                    src="https://source.unsplash.com/600x400"
+                                    alt="Image Caption"
+                                    class="w-full"
+                                />
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2 text-slate-700">
+                                        Image Title
+                                    </div>
+                                    <p class="text-sm text-slate-600">
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Error, distinctio.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* <div class="container">
+                <div class="pt-7 pb-7">
+                    <div class="w-full text-center mb-16">
+                        <h4 class="font-semibold text-lg text-hijau-gelap mb-2">
+                            Daftar Hama Pada Tanaman Jagung
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-10 pb-0 pl-2 grid grid-cols-1">
                 <h1>Daftar Hama Pada Tanaman Jagung</h1>
             </div>
-            <div className="p-2 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="p-2 grid grid-cols-2 sm:grid-cols-4 gap-4">
                 <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img
@@ -405,7 +608,7 @@ export default function Keterangan(props) {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </User>
     );
 }
