@@ -28,8 +28,8 @@ export default function RiwayatHama(props) {
                         }}
                     />
                 </div>
-                <div className="w-full px-6 mx-auto">
-                    <div className="px-6 bg-slate-500 rounded-lg shadow-lg mb-5">
+                <div className="px-6 mx-auto">
+                    <div className="max-w-xl px-6 bg-slate-500 rounded-lg shadow-lg mb-5">
                         <div class="font-bold text-xl mb-2 text-slate-700">
                             Image Title
                         </div>

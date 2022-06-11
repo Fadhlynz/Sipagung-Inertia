@@ -17,7 +17,7 @@ export default function Keterangan(props) {
                     </div>
                     <div className="w-screen px-4">
                         <div class="container mx-auto px-6 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
-                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                            <div class="max-w-md rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:w-64 md:w-80 lg:w-72">
                                 <img
                                     src="https://source.unsplash.com/600x400"
                                     alt="Image Caption"
@@ -39,7 +39,7 @@ export default function Keterangan(props) {
                                     </a>
                                 </div>
                             </div>
-                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                            <div class="max-w-md rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:w-64 md:w-80 lg:w-72">
                                 <img
                                     src="https://source.unsplash.com/600x400"
                                     alt="Image Caption"
@@ -55,7 +55,7 @@ export default function Keterangan(props) {
                                     </p>
                                 </div>
                             </div>
-                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                            <div class="max-w-md rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:w-64 md:w-80 lg:w-72">
                                 <img
                                     src="https://source.unsplash.com/600x400"
                                     alt="Image Caption"
@@ -71,7 +71,7 @@ export default function Keterangan(props) {
                                     </p>
                                 </div>
                             </div>
-                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                            <div class="max-w-md rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:w-64 md:w-80 lg:w-72">
                                 <img
                                     src="https://source.unsplash.com/600x400"
                                     alt="Image Caption"
@@ -87,7 +87,7 @@ export default function Keterangan(props) {
                                     </p>
                                 </div>
                             </div>
-                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                            <div class="max-w-md rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:w-64 md:w-80 lg:w-72">
                                 <img
                                     src="https://source.unsplash.com/600x400"
                                     alt="Image Caption"
@@ -114,7 +114,7 @@ export default function Keterangan(props) {
                     </div>
                     <div className="w-screen px-4">
                         <div class="container mx-auto px-6 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
-                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                            <div class="max-w-md rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:w-64 md:w-80 lg:w-72">
                                 <img
                                     src="https://source.unsplash.com/600x400"
                                     alt="Image Caption"
@@ -130,7 +130,7 @@ export default function Keterangan(props) {
                                     </p>
                                 </div>
                             </div>
-                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                            <div class="max-w-md rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:w-64 md:w-80 lg:w-72">
                                 <img
                                     src="https://source.unsplash.com/600x400"
                                     alt="Image Caption"
@@ -146,7 +146,7 @@ export default function Keterangan(props) {
                                     </p>
                                 </div>
                             </div>
-                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                            <div class="max-w-md rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:w-64 md:w-80 lg:w-72">
                                 <img
                                     src="https://source.unsplash.com/600x400"
                                     alt="Image Caption"
@@ -162,7 +162,7 @@ export default function Keterangan(props) {
                                     </p>
                                 </div>
                             </div>
-                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                            <div class="max-w-md rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:w-64 md:w-80 lg:w-72">
                                 <img
                                     src="https://source.unsplash.com/600x400"
                                     alt="Image Caption"
@@ -178,7 +178,7 @@ export default function Keterangan(props) {
                                     </p>
                                 </div>
                             </div>
-                            <div class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72">
+                            <div class="max-w-md rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:w-64 md:w-80 lg:w-72">
                                 <img
                                     src="https://source.unsplash.com/600x400"
                                     alt="Image Caption"
