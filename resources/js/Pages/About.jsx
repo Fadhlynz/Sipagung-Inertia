@@ -14,11 +14,19 @@ export default function About() {
                         <h5 class="mb-2 text-2xl font-bold text-center tracking-tight text-gray-900 dark:text-white">
                             SIPAGUNG
                         </h5>
-                        <p class="font-normal text-gray-700 dark:text-gray-400">
-                            Here are the biggest enterprise technology
-                            acquisitions of 2021 so far, in reverse
-                            chronological order.
+                        <div className="flex flex-auto space-x-4 justify-center text-lg mb-5">
+                            <a href="">Fadli Nur Zaman</a>
+                            <a href="">Fadli Nur Zaman</a>
+                            <a href="">Fadli Nur Zaman</a>
+                        </div>
+                        <p className="font-semibold text-center text-slate-700">
+                            Sistem Pakar, Diagnosa Hama dan Penyakit pada
+                            Tanaman Jagung
                         </p>
+                        <p class="font-normal text-center text-gray-700 dark:text-gray-400">
+                            Copyright © 2022, Universitas Tadulako Palu
+                        </p>
+                        <div></div>
                     </a>
                 </div>
             </div>

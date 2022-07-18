@@ -17,11 +17,10 @@ module.exports = {
                 "kuning-gelap": "#EFD345",
                 "hijau-cerah": "#BABD42",
                 "hijau-gelap": "#82954B",
+                "hijau-lime": "#799F0C",
+                "kuning-lime": "#FFE000",
             },
         },
     },
-    plugins: [
-        require("@tailwindcss/forms"),
-        require("flowbite/plugin"),
-    ],
+    plugins: [require("@tailwindcss/forms"), require("flowbite/plugin")],
 };
